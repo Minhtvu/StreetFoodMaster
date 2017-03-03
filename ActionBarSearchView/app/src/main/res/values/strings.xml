@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Search By Food  </string>
+    <string name="search_default">Search by street name</string>
+    <string name="search_location">Search by current location</string>
+    <string name="search_advance">Advance Search</string>
+    <string name="search_food">Search by food name</string>
+    <string-array name="array_street">
+        <item>Burger</item>
+        <item>Burrito</item>
+        <item>Cheese</item>
+        <item>Pho</item>
+        <item>Rice</item>
+        <item>Noodles</item>
+        <item>Thailander</item>
+        <item>Vietnamese</item>
+        <item>Chinese</item>
+        <item>American</item>
+        <item>Salmon</item>
+        <item>Steak</item>
+        <item>Pork</item>
+        <item>Fish</item>
+    </string-array>
+</resources>
