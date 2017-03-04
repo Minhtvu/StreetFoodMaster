@@ -23,13 +23,37 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity android:name=".SignInActivity"
+            android:parentActivityName=".MainActivity"
+            android:label= "@string/title_signin_activity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity android:name=".SearchActivity"
             android:parentActivityName=".OptionActivity"
             android:label= "@string/title_search_activity">
         <!-- The meta-data tag is required if you support API level 15 and lower -->
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".MainActivity" />
+            android:value=".OptionActivity" />
+        </activity>
+        <activity android:name=".SignUpActivity"
+            android:parentActivityName=".MainActivity"
+            android:label= "@string/title_signup_activity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".SurpriseActivity"
+            android:parentActivityName="MainActivity"
+            android:label= "@string/title_surprise_activity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
     </application>
 

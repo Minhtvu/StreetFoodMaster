@@ -12,8 +12,6 @@
     <string name="website_text">Enter your website or social media address</string>
     <string name="password_text">Enter a password</string>
     <string name="verify_text">Confirm your password</string>
-    <string name="picture_button">UPLOAD PICTURE</string>
-    <string name="upload_button">UPLOAD MENU</string>
     <string name="submit_button">SUBMIT</string>
     <string name="action_sign_in">SIGN IN</string>
     <string name="prompt_email">Enter your email</string>
@@ -26,6 +24,16 @@
     <string name="new_business">Create your business profile</string>
     <string name="title_option_activity">Advance Search</string>
     <string name="title_search_activity">Search by food</string>
+    <string name="map">Location Direction</string>
+    <string name="pictures">Pictures</string>
+    <string name="links_reviews">Reviews</string>
+    <string name="menu_button">Menu</string>
+    <string name="fave_button">Favorite!!!</string>
+    <string name="title_signin_activity">Sign In</string>
+    <string name="upload_picture_button">Upload Picture</string>
+    <string name="upload_menu_button">Upload Menu</string>
+    <string name="title_surprise_activity">Suggestion</string>
+    <string name="title_signup_activity">Sign Up</string>
     <string-array name="array_street">
         <item>Burger</item>
         <item>Burrito</item>

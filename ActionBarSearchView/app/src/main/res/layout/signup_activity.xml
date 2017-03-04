@@ -114,16 +114,16 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/picture_button"
+            android:id="@+id/upload_picture_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/picture_button"
+            android:text="@string/upload_picture_button"
             android:drawablePadding="4dp"/>
         <Button
-            android:id="@+id/upload_button"
+            android:id="@+id/upload_menu_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/upload_button"
+            android:text="@string/upload_menu_button"
             android:drawablePadding="4dp"/>
 
         <Button

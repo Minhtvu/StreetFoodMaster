@@ -1,5 +1,6 @@
 package com.gnirt69.actionbarsearchview;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import android.widget.SearchView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends Activity {
 
     ArrayAdapter<String> adapter;
     @Override
