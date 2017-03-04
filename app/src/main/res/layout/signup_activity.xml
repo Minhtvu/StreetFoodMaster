@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/activity_title"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:orientation="vertical"
+              android:weightSum="1"
+              tools:context="com.gnirt69.StreetFoodMaster.SignUpActivity"> >
+
+    <TextView
+        android:id="@+id/name_text"
+        android:text="@string/name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/enter_name"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:ems="12"
+        android:background="@android:drawable/editbox_background"/>
+
+    <TextView
+        android:id="@+id/mission_text"
+        android:text="@string/mission_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/enter_mission"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:ems="12"
+        android:background="@android:drawable/editbox_background"/>
+
+    <TextView
+        android:id="@+id/hours_text"
+        android:text="@string/hours_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/enter_hours"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:ems="12"
+        android:background="@android:drawable/editbox_background"/>
+
+    <TextView
+        android:id="@+id/location_text"
+        android:text="@string/location_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/enter_locationn"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:ems="12"
+        android:background="@android:drawable/editbox_background"/>
+
+    <TextView
+        android:id="@+id/contact_text"
+        android:text="@string/contact_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/enter_contact"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:ems="12"
+        android:background="@android:drawable/editbox_background"/>
+
+    <TextView
+        android:id="@+id/website_text"
+        android:text="@string/website_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/enter_website"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:ems="12"
+        android:background="@android:drawable/editbox_background"/>
+
+
+    <TextView
+        android:id="@+id/password_text"
+        android:text="@string/password_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/enter_password"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:ems="12"
+        android:background="@android:drawable/editbox_background"/>
+
+    <TextView
+        android:id="@+id/verify_text"
+        android:text="@string/verify_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/enter_verify"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:ems="12"
+        android:background="@android:drawable/editbox_background"/>
+
+
+    <LinearLayout
+        android:id="@+id/activity_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/upload_picture_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/upload_picture_button"
+            android:drawablePadding="4dp"/>
+        <Button
+            android:id="@+id/upload_menu_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/upload_menu_button"
+            android:drawablePadding="4dp"/>
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit_button"
+            android:drawablePadding="4dp"/>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

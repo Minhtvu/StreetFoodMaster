@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gnirt69.StreetFoodMaster">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.gnirt69.StreetFoodMaster.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.gnirt69.StreetFoodMaster.OptionActivity"
+            android:parentActivityName="com.gnirt69.StreetFoodMaster.MainActivity"
+            android:label= "@string/title_option_activity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gnirt69.StreetFoodMaster.MainActivity" />
+        </activity>
+        <activity android:name="com.gnirt69.StreetFoodMaster.SignInActivity"
+            android:parentActivityName="com.gnirt69.StreetFoodMaster.MainActivity"
+            android:label= "@string/title_signin_activity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gnirt69.StreetFoodMaster.MainActivity" />
+        </activity>
+        <activity android:name="com.gnirt69.StreetFoodMaster.SearchActivity"
+            android:parentActivityName="com.gnirt69.StreetFoodMaster.OptionActivity"
+            android:label= "@string/title_search_activity">
+        <!-- The meta-data tag is required if you support API level 15 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.gnirt69.StreetFoodMaster.OptionActivity" />
+        </activity>
+        <activity android:name="com.gnirt69.StreetFoodMaster.SignUpActivity"
+            android:parentActivityName="com.gnirt69.StreetFoodMaster.MainActivity"
+            android:label= "@string/title_signup_activity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gnirt69.StreetFoodMaster.MainActivity" />
+        </activity>
+        <activity android:name="com.gnirt69.StreetFoodMaster.SurpriseActivity"
+            android:parentActivityName="com.gnirt69.StreetFoodMaster.MainActivity"
+            android:label= "@string/title_surprise_activity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gnirt69.StreetFoodMaster.MainActivity" />
+        </activity>
+        <activity android:name="com.gnirt69.StreetFoodMaster.ProfileActivity"
+            android:parentActivityName="com.gnirt69.StreetFoodMaster.SearchActivity"
+            android:label= "@string/title_profile_activity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gnirt69.StreetFoodMaster.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
