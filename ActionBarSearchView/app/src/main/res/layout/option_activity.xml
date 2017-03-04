@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
     android:id="@+id/search_choice"
-    android:text="@string/app_name">
+    android:text="Advance ">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
@@ -15,19 +15,19 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/search_location"
+        android:id="@+id/search_location_button"
         android:text="@string/search_location"
         android:layout_gravity="center_horizontal"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/default_search"
+            android:id="@+id/search_street_button"
             android:text="@string/search_default"
             android:layout_gravity="center_horizontal"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/search_food"
+        android:id="@+id/search_food_button"
         android:text="@string/search_food"
         android:layout_gravity="center_horizontal"/>
     </LinearLayout>
