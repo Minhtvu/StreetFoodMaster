@@ -7,22 +7,24 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class SearchActivity extends Activity {
+public class SearchActivity extends AppCompatActivity {
 
     ArrayAdapter<String> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_activity);
-        Intent intent = getIntent();
-        ListView lv = (ListView)findViewById(R.id.listViewStreet);
+        ListView lv = (ListView)findViewById(R.id.listViewItem);
         ArrayList<String> arrayCountry = new ArrayList<>();
         arrayCountry.addAll(Arrays.asList(getResources().getStringArray(R.array.array_street)));
 
@@ -31,12 +33,14 @@ public class SearchActivity extends Activity {
                 android.R.layout.simple_list_item_1,
                 arrayCountry);
         lv.setAdapter(adapter);
-    }
-    @Override
-    protected void onStart() {
-        super.onStart();
-        setContentView(R.layout.search_activity);
-
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent,
+                                    View view, int position, long id){
+                Intent intent = new Intent(view.getContext(), ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -58,8 +62,14 @@ public class SearchActivity extends Activity {
                 return false;
             }
         });
-
-
         return super.onCreateOptionsMenu(menu);
     }
+    /*
+    @Override
+    protected void onStart() {
+        super.onStart()search;
+        setContentView(R.layout.seativity);
+
+    }*/
+
 }

@@ -8,6 +8,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by minhtvu on 3/3/17.
@@ -15,6 +16,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
     private Button signInButton;
+    private Button advanceButton;
     private Button searchButton;
     private Button surpriseButton;
     private Button signUpButton;
@@ -30,11 +32,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        searchButton = (Button) findViewById(R.id.search_button);
-        searchButton.setOnClickListener(new View.OnClickListener() {
+        advanceButton = (Button) findViewById(R.id.advance_button);
+        advanceButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), OptionActivity.class);
                 startActivity(intent);
+            }
+        });
+        locationText = (EditText) findViewById(R.id.enter_location);
+        searchButton = (Button) findViewById(R.id.search_button);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (locationText.getText().toString().length() > 0 ){
+                    Toast toast = Toast.makeText(getApplicationContext(),"The list of shop will be given based on your location input", Toast.LENGTH_LONG);
+                    toast.show();}
+                else{
+                    Toast toast = Toast.makeText(getApplicationContext(),"Enter a location", Toast.LENGTH_LONG);
+                    toast.show();
+                }
             }
         });
         surpriseButton = (Button) findViewById(R.id.surprise_button);
@@ -50,15 +65,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(v.getContext(), SignUpActivity.class);
                 startActivity(intent);
             }
-        });
-        locationText = (EditText) findViewById(R.id.enter_location);
-        locationText.addTextChangedListener(new TextWatcher(){
-            public void afterTextChanged(Editable text){
-                //call the search engine with the text
-            }
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
         });
     }
 }

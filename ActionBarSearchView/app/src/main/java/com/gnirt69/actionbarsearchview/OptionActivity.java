@@ -14,10 +14,11 @@ import android.widget.Toast;
  * Created by minhtvu on 3/3/17.
  */
 
-public class OptionActivity extends Activity {
+public class OptionActivity extends AppCompatActivity {
     private Button currentButton;
     private Button streetButton;
     private Button foodButton;
+    private Button signInButton;
     private static final String TAG = "OptionActivity";
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -26,7 +27,6 @@ public class OptionActivity extends Activity {
         currentButton = (Button) findViewById(R.id.search_location_button);
         currentButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //Log.AG, "Here");
                 Intent intent = new Intent(v.getContext(), SearchActivity.class);
                 startActivity(intent);
             }
@@ -45,11 +45,19 @@ public class OptionActivity extends Activity {
                 startActivity(intent);
             }
         });
+        signInButton = (Button) findViewById(R.id.signin_button);
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), SignInActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+    /*
     @Override
     protected void onStart() {
         super.onStart();
         setContentView(R.layout.option_activity);
-
     }
+    */
 }

@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">StreetFood Master</string>
-    <string name="search_default">Search by street name</string>
     <string name="search_location">Search by current location</string>
     <string name="search_advance">Advance Search</string>
     <string name="search_food">Search by food name</string>
@@ -34,6 +33,9 @@
     <string name="upload_menu_button">Upload Menu</string>
     <string name="title_surprise_activity">Suggestion</string>
     <string name="title_signup_activity">Sign Up</string>
+    <string name="advance_button">Advance</string>
+    <string name="search_street_button">Search by Street Name</string>
+    <string name="title_profile_activity">Profile</string>
     <string-array name="array_street">
         <item>Burger</item>
         <item>Burrito</item>

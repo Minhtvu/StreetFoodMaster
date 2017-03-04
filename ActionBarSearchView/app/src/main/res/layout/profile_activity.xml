@@ -14,14 +14,14 @@
         android:layout_gravity="top"
         android:id="@+id/linearLayout">
 
-        <EditText
+        <TextView
             android:id="@+id/map"
             android:layout_height="229dp"
             android:layout_width="190dp"
             android:hint="@string/map"
             android:background="@android:drawable/editbox_background"/>
 
-        <EditText
+        <TextView
             android:id="@+id/pictures"
             android:layout_height="229dp"
             android:layout_width="190dp"
@@ -31,8 +31,8 @@
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/enter_locationn"
+    <TextView
+        android:id="@+id/enter_location"
         android:layout_height="231dp"
         android:layout_width="fill_parent"
         android:hint="@string/links_reviews"
@@ -45,8 +45,8 @@
         android:layout_gravity="center_horizontal">
 
         <Button
-            android:id="@+id/menu"
-            android:layout_width="wrap_content"
+            android:id="@+id/menu_button"
+      android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/menu_button"
             android:layout_gravity="center_horizontal"

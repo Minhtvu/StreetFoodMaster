@@ -6,7 +6,8 @@
               android:layout_height="match_parent"
               android:gravity="center"
               android:orientation="vertical"
-              android:weightSum="1">
+              android:weightSum="1"
+              tools:context="com.gnirt69.actionbarsearchview.SignUpActivity"> >
 
     <TextView
         android:id="@+id/name_text"
