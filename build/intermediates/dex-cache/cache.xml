@@ -3,543 +3,543 @@
 
     <item
         is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="0d5cbbbfe040201c7569478b70a13b58fd11aab4">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-10.2.0_b00244f0e9c99d009ddc6db8e8c44c39300e011c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/palette-v7/24.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-palette-v7-24.0.0_6411cb54ca521243da83ae2718be8d33476da8cf/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="9d1d0e1270310e34e2d65afda2bc18605c14cd46">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-10.2.0_7e3e16e67964d7398bf6c3b735ccd3326aae8c93/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="3aaf1e7b5fe9f4d3ff22c4edc0ead631f7389d30">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-10.2.0_614ec4f52b456a89a7cf42855afa00688c72e710/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="4ef2d91da513c4d7e773ae438fe04d0e4c135957">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-10.2.0_e2ab6521f9a570b77a0384498161155008ad6c2d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="3f4483afd050f3be12db7838422309446a45daa1">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-10.2.0_3c04bacaedbcbddf2a63be6b63960bfe853c849d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="421a5cebe9ff187c98075c59786e9464c5c67d36">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-10.2.0_2834d4947ad5371123a332e4a03d46ae5817d8a0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="a61e7010aa7be5da53cd1bc5279630510c9a4912">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-10.2.0_3cecf29d69ecf5fe577578b348fd228a0ee8826a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="101393e975eaf36e3ff40b277ee9a019e077afef">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-10.2.0_c355aef676415a9ba97c75fe355df0b4558dbacd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="94fca868854457ede6df15c902938468c71d579e">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-10.2.0_ce7bea750e7827163c008d5b98137f18d956ebad/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="4e01b82d664e1a8253b2b9658e74b5da35c8771d">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-10.2.0_a577660df749af95b7550a22b871d8f6eca0cf9d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="a9493f008850469ed3fab9b28658919562882aed">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-10.2.0_ebb6dabbae726a683a3de353c04f12ad3eb33d17/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-instantapps/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="423fb69e69759d8b726fa4a4fb6a1ea9fc86d1cd">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-instantapps-10.2.0_b22c58e8d3c6371ad15bff28caa3e86f09e61023/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-v4-impl/10.2.0/jars/classes.jar"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-v4-impl/10.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
         sha1="8438c64f9eb581429dc592f7c9b3156a3d071653">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-v4-impl-10.2.0_0e7338227ecaf9dae4664a865b400b89cbdaa92b/classes.dex" />
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-v4-impl-10.2.0_1670c5d3eb21663c8182324e49b8eebbf1d31c59/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="75575883f0348fc5d2be85f23bd10b050095cf17">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-10.2.0_648d3ffe1e34ced1bde61b862b9e4577b6f0017b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="aa23e4589287adb431ef59d6c78af79ab8885682">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-10.2.0_c6a4349fcb2e668e549f44e28125ce828646b652/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-appindexing/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="1fbf3733f36fea63e70373212796e70f9079981f">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-appindexing-10.2.0_be1eee8ba992d20a06cdecba26187896ed42bc6a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-10.2.0_ae32a6dd008a28b1e24db4a8287a2a7e5b913b96/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="654b294d429b56fd18392f2b68ad79954f431f8e">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-10.2.0_b1b44c71861d1edeb6b5c08a844ab3f7ebc6a354/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="a3f7595ca32e614b454ceb7b7e241bb037a28e86">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-10.2.0_e4a7fce113f2a3d1d0cc1f18309692e3765d50f2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="3d6951cb416ebf8c66a32b9480808ca247b68344">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-10.2.0_3409adde53de1cf35e22b74c45688fe734e9459a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.0.0_7554b8f3f256ff3a508f3f5115378a943b95dafb/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="ab0c7fe28f9506302eb39adf1ebf5858732e18ec">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-10.2.0_bd2d1ef82e17e97a2ff74e9aac915dbc4ee25853/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="ea03bbfaed89818f233ee9918fac493f2b63895a">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-10.2.0_027f858447b74080d7c14cf46f2cd2ce6d79a182/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="457a75e0c90f35c39f9e9601891770d629341802">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_298635245bbdf7ac3c94a301fb248b26ec348e4e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="6780691deccd8941df1d0120960f8f899e10a6d9">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_7271ab94663d804bd5c1574089635b2b73578784/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.0.0_4e250c396c7a1d6e94416f21ae687f137b355b00/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="6da05b7498da036b5b37c3beb861cd2060929dcd">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-10.2.0_62409ddf001756d8d9aa39a5d598a0f8017df385/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="ca82d5800780b1d53f0f9ab43678d8634a34cddc">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-10.2.0_397b538d16ed5f33e1b19813fd7b2421a3414a7d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="1df6d719c4e264d66bb98baa5cb637495b8cca66">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-10.2.0_1ec7ff7c14d98ed1f5a88863269639fffa1a77ba/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="444f9de23145e8caba7bf1c1772acad142ea6013">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-10.2.0_5323407ec62d079b9ed601ff63d6074d0be67ed5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="0e301f24b283f14b564f660c9abe863af6be5896">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-10.2.0_96fb02a9043946875db089fdf41b11c0387f593e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/libs/internal_impl-24.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_150d834c983214e6e33049e22b13b3e7dc400bdf/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="db48dfabe8ecc46681ceca418d6bd61a5339f818">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-10.2.0_f2344fe0e4f08aa2e931481a202dcc3efd069e10/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="e7157a9577c983651d6c6ee313813424fe2d8ab6">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-10.2.0_b2b91b2c96ce23413161e64da9ac430092cd675e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.0.0_4fb6044ea74b97c3313ea3125274174901444d32/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="68485f21eeb5d6c9ed82c445d520b9fc81c87108">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-10.2.0_fe1a7f0cf1a0ec3cc8f255c49136f8470f4624fc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d08bb32b88df3dbcbe1d498c3c57f020b8c521ec">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-10.2.0_4c9808efa207bb100a1a18d4ab304dca04fc4d95/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/10.2.0/jars/classes.jar"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/10.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
         sha1="1bab75be1918fc9871be4da7afe38d7e4d308303">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-10.2.0_02eab111d92cf00d44b36180318306fa99dc8cef/classes.dex" />
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-10.2.0_14dd2929ddd52578e0787320c1ac6f5c61131870/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="857ce7350acf811749c8fd0254d3d39b02aa71f5">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gass-10.2.0_7e7140112bb3cfa642293e9edd5f091c379a567f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="ce9112e08a027c8620ae693983e38cdbb9f6371b">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-10.2.0_b2f1c6e386fad430f433ace9748a559faf362a96/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.0.1_4760368c6f62db47fc7fea4a9f39297cbf773afa/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_7242ac74697f5591d26dbe9b93c0904d99e67efc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.2.0_575b31c0a57474b13ee29e9bfe58440024c5cbee/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="8fd2e9eadc9d214966ee7f60d6c5a17a335d7533">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-framework-10.2.0_7c167b8734a863f966d4e66763b8bd00298a4c58/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="74c5a91d6510ad42410e8a047d90d2ea6721a0e0">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-10.2.0_cec1d7e55d13dbb6c448de0c1cf3050a14275d89/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="ddb7fed808f4331174b59428ccfc46b3696c9812">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-10.2.0_e485563156753a778011f4d2f849439ad9bb0c07/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/10.2.0/jars/classes.jar"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/10.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
         sha1="7d14fe9bd2283b2eb7fcab08458aa0357917e138">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-10.2.0_62a7afa5bbb3c0207e3c871fb673c6194d29b505/classes.dex" />
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-10.2.0_c74d6c7854fc5e757a7005b9ef962fe6354a806b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/10.2.0/jars/classes.jar"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e7157a9577c983651d6c6ee313813424fe2d8ab6">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-10.2.0_8f0a07cae45c56d0bd01ad3945ab25bc473f4918/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/10.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
         sha1="90270132a5f1a33584f453c571257dd35e728201">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-10.2.0_2c5a9267dd471e6f1f8f824996b18d8368fc164a/classes.dex" />
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-10.2.0_cb663a966c2c708ec291c479c242375a0a9853f9/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/10.2.0/jars/classes.jar"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="646b2c48e147b943f0a39842457fdc66d501e4b6">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-10.2.0_4b31e6f68f619ab0eeca990de3e18051b4e7db07/classes.dex" />
+        sha1="0d5cbbbfe040201c7569478b70a13b58fd11aab4">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-10.2.0_ed9ef3fe34624498457fedc052ca2d809dae2190/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-10.2.0_a209ed999351c4dc4c390a05a276e12b241d3abf/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.0.0_7ee541e9849b207f06064c8e3232ca0a630bcbe7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.0.0_10a82e18c773e5c55735f8493a2b0db144834bf2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-awareness/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="45e0953544711e0b5a2d227732e88cccb82793bc">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-awareness-10.2.0_541572ff7120b0e207a4c459a2d67013f1297b59/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="b831d3902674d096189451d46fce219e2c2904b7">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-10.2.0_c0631a1aead74b2e5cba31b9083243fa5038c5cc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="8e1d31656bc9f1889283836e025e6cb703acd38a">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-10.2.0_97bbacd431f1166ab9b06e7b060ec82d65659434/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="48532a016bb0dfbe7970c147ce784598a515406b">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-10.2.0_aab5cad611343ee09df2f98536776f549a959fb2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/10.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="0f58195bee8a08f35e7d4ee7fd4b0479e570e172">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-10.2.0_dfb1c22a19967002b28824724fbc0d06e1db3168/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/10.2.0/jars/classes.jar"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/10.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
         sha1="db4aca1c1ec60f2c098d3b6c91cedfb7838f83ed">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-10.2.0_3c83b522761ee643e526262f24e9291e0d8bccc5/classes.dex" />
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-10.2.0_149c730f4bca467b5764738c5b661377b977f910/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/classes.jar"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="4ef2d91da513c4d7e773ae438fe04d0e4c135957">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-10.2.0_80d52a86ac8fce78f4d68ee93ebe9000f273d21f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.0.0_3b1be9df323aff797c0c7da505850c4456558b14/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.0.0_b1e8d77310d6d7d47de93e3c28b69e0e231d9e0f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="646b2c48e147b943f0a39842457fdc66d501e4b6">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-10.2.0_9e5443f0ad4bc814992b5323ddfa4c4f6698a3ab/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-10.2.0_7f28953f1cfe769344ec463069772caf8aa1f22e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.2.0_11ae03b8183582a25678f9f501f0342a3d3bc677/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="68485f21eeb5d6c9ed82c445d520b9fc81c87108">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-10.2.0_521492ae5db77d8cbcc2dac7f290daaf71a2abc0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6da05b7498da036b5b37c3beb861cd2060929dcd">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-10.2.0_b68cbcfc1c4df871ad7c28cb05c234e844ef98ff/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="74c5a91d6510ad42410e8a047d90d2ea6721a0e0">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-10.2.0_2d8228280565f4614241893594bd491d09796f3e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-10.2.0_bbc5edcd119eb18a19c1cc4fe6396b03d902748e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.0.0_a0897992beb523a9e47cfc22b873a3d8217fe884/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ea03bbfaed89818f233ee9918fac493f2b63895a">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-10.2.0_026f9658ace3652bfb27be1ba0fef0443ef7add9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8e1d31656bc9f1889283836e025e6cb703acd38a">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-10.2.0_9a556bffafe9d44208fd8685599efb8fa780c3c8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9d1d0e1270310e34e2d65afda2bc18605c14cd46">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-10.2.0_2a60c5ce73ccb9417508b570b21c7fe4e112c192/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.0.0_7312784a20c82b265b30bada55c5d261d230c96e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d08bb32b88df3dbcbe1d498c3c57f020b8c521ec">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-10.2.0_33f8ec8eb3ae3a9eeea11f74e715259b9c0c867d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ab0c7fe28f9506302eb39adf1ebf5858732e18ec">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-10.2.0_9bd3f3c5c4306ce29f34ac249b9c3d533088b3da/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-instantapps/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="423fb69e69759d8b726fa4a4fb6a1ea9fc86d1cd">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-instantapps-10.2.0_35217fc493c60d6a5da0dac2d6b7a77e19da6601/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-awareness/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="45e0953544711e0b5a2d227732e88cccb82793bc">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-awareness-10.2.0_4e47bd8e9a75dcbe1479a697d9cc23feab28c24f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3d6951cb416ebf8c66a32b9480808ca247b68344">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-10.2.0_9d12495bcc093070486a7806e23beeadbf928951/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f4483afd050f3be12db7838422309446a45daa1">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-10.2.0_f2f54ed5311543d5af0f7b0e80f89c53bc20c754/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="857ce7350acf811749c8fd0254d3d39b02aa71f5">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gass-10.2.0_cd8ddb1bf4a40884fe273013dfdb81ebe1de04b8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="101393e975eaf36e3ff40b277ee9a019e077afef">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-10.2.0_ba9b1b037d42c8cad60f751892101908308c94a2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a5c31622b785a7ae58375690d33400898898dbd7">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_a539d51cd3dacd4cdee4fbfbb3d9147d6c738916/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-appindexing/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1fbf3733f36fea63e70373212796e70f9079981f">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-appindexing-10.2.0_f9bce7bb3dea00a6cb944fc60971545cb29686de/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1df6d719c4e264d66bb98baa5cb637495b8cca66">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-10.2.0_f1db5e998ee87dcfc443fbe4df3e783b3ac3f784/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/palette-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-palette-v7-24.0.0_8f267c70fc0a9650dd424bd733fa93ce714c5cbb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a9493f008850469ed3fab9b28658919562882aed">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-10.2.0_9fc41cf95ab9971b35deb650ed34a2c099742e5d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="0f58195bee8a08f35e7d4ee7fd4b0479e570e172">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-10.2.0_ae88525ba949a3ebbc6a7e4d67ce5ac0af0478ce/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="421a5cebe9ff187c98075c59786e9464c5c67d36">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-10.2.0_bbd554407fa042eaf6109ee65dc1ec04270b1e74/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a61e7010aa7be5da53cd1bc5279630510c9a4912">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-10.2.0_12d0272e36fb56835a46d190d77f9507a0fac4b7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3aaf1e7b5fe9f4d3ff22c4edc0ead631f7389d30">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-10.2.0_5bc4b99086fc9a2e545b496d0cdc1a283d9146e5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="aa23e4589287adb431ef59d6c78af79ab8885682">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-10.2.0_7662bcebd38cfdbce43e9bac4942046397612069/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="654b294d429b56fd18392f2b68ad79954f431f8e">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-10.2.0_6c65875fdd5118fa5af8d1a5deeadb12cad32453/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_c79b19ca188ed2595944de7dcef069dd785caa37/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.0.1_907fe52eb51f0d3392a058017f89dfbaded27cfe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ce9112e08a027c8620ae693983e38cdbb9f6371b">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-10.2.0_d567289456b72da453f417b41bf933dd2887a246/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="0e301f24b283f14b564f660c9abe863af6be5896">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-10.2.0_b77b6ee87938a969062d876bd78fae127cabae80/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.0.0_2594fe594ce5166c5974e031f43f09279589182d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="4e01b82d664e1a8253b2b9658e74b5da35c8771d">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-10.2.0_21a57ec23478bb5a8e3bf3e3db6a9f888fd6688a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="444f9de23145e8caba7bf1c1772acad142ea6013">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-10.2.0_db06dd1bd8bdaf62eb254fce209386b3c014d3b1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8fd2e9eadc9d214966ee7f60d6c5a17a335d7533">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-framework-10.2.0_6a3fd2d38e4661fd0d0b998184f6c95a7827439d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a3f7595ca32e614b454ceb7b7e241bb037a28e86">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-10.2.0_ea286a550302ca4d0300e30248958ba8912c34f5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ca82d5800780b1d53f0f9ab43678d8634a34cddc">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-10.2.0_0d10e9d052533ce2d1eede9906fafc8a13726ad3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="75575883f0348fc5d2be85f23bd10b050095cf17">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-10.2.0_138e3f4827d40dcc8366f86ebde90c5ea5b4bc69/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="db48dfabe8ecc46681ceca418d6bd61a5339f818">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-10.2.0_08bb5144f7935323ac5cef5d18ef98ccf4f387bb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
         sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
-        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-24.0.0_772afd5074b43c607e2024c152dab5dbed71e8b7/classes.dex" />
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-24.0.0_157d4f06734d971e75ef41d63a5454e8487fde6a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ddb7fed808f4331174b59428ccfc46b3696c9812">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-10.2.0_c1fc0c725044dfec37510fa2ad3d820b75f38733/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="b831d3902674d096189451d46fce219e2c2904b7">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-10.2.0_ced73e814f39587dd6eae48404c5b3d828089a0c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="0f9360aa0344e643954bef41586702f4cda7d3bd">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_a93719d11f28fc6c47ecded5d90661b194c83488/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="48532a016bb0dfbe7970c147ce784598a515406b">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-10.2.0_7e909f7f4149af9bd510f14cf5019060c18b1410/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_bfac7e665b9aba12f3db2bc1faf7cf92ff44cd34/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/10.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="94fca868854457ede6df15c902938468c71d579e">
+        <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-10.2.0_744c587817417014b76443b54fff0cc721d9cdab/classes.dex" />
     </item>
 
 </items>
