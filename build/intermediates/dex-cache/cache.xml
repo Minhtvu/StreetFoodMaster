@@ -1,2 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_6cbdf16c3ec7ee03ee2c1306df3a6de78a5702aa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_fa12b188366f079692ee8d1992a08db29f721f00/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kyle/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_cdea683b3c708d91d54a74e9ebfa59c94cdea369/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_e41b7393e4ff0bbbefc642093f2db6a0bccc20c6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="393495844a1d089e4e72ed17fdbd7c6ed4cf56eb">
+        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_298635245bbdf7ac3c94a301fb248b26ec348e4e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_5f697a17aaefa3a204c085da46187f31679a2083/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6780691deccd8941df1d0120960f8f899e10a6d9">
+        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_7271ab94663d804bd5c1574089635b2b73578784/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-22.2.0_f2a8699de2b1457ad3697828cff965fa1458805a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_fae25bd5afbbeef813c71c76026662ed549b8b3e/classes.dex" />
+    </item>
+
+</items>

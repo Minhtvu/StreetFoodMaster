@@ -38,9 +38,11 @@ public class OptionActivity extends AppCompatActivity {
         currentButton = (Button) findViewById(R.id.search_location_button);
         currentButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Location current = getLastBestLocation();
-                latPoint = current.getLatitude();
-                lngPoint = current.getLongitude();
+                //Location current = getLastBestLocation();
+                //latPoint = current.getLatitude();
+                //lngPoint = current.getLongitude();
+                latPoint = 39.7555;
+                lngPoint = 105.2211;
                 Log.i(TAG, "LatPoint: " + latPoint);
                 Log.i(TAG, "LngPoint: " + lngPoint);
 
