@@ -1,6 +1,8 @@
 package com.gnirt69.StreetFoodMaster;
 
 import android.Manifest;
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,6 +10,8 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -17,16 +21,29 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.GoogleMap;
 
 /**
  * Created by minhtvu on 3/3/17.
  */
 
-public class OptionActivity extends AppCompatActivity {
+public class OptionActivity extends Activity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener{
     private Button currentButton;
     private Button streetButton;
     private Button foodButton;
     private Button signInButton;
+    private Location mLastLocation;
+    public  LocationManager mLocationManager;
+    private GoogleApiClient mClient;
+    private GoogleMap mMap;
+    private Location mCurrentLocation;
+    private static final int REQUEST_ERROR = 0;
     private double latPoint;
     private double lngPoint;
     private final int REQUEST_PERMISSION_ACCESS_FINE_LOCATION = 1337;
@@ -35,9 +52,22 @@ public class OptionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.option_activity);
         Intent intent = getIntent();
+        mClient = new GoogleApiClient.Builder(this)
+                .addApi(LocationServices.API)
+                .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
+                    @Override
+                    public void onConnected(Bundle bundle) {
+                        invalidateOptionsMenu();
+                    }
+                    @Override
+                    public void onConnectionSuspended(int i) {
+                    } })
+                .build();
         currentButton = (Button) findViewById(R.id.search_location_button);
         currentButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                /*
+<<<<<<< HEAD
                 //Location current = getLastBestLocation();
                 //latPoint = current.getLatitude();
                 //lngPoint = current.getLongitude();
@@ -45,6 +75,27 @@ public class OptionActivity extends AppCompatActivity {
                 lngPoint = 105.2211;
                 Log.i(TAG, "LatPoint: " + latPoint);
                 Log.i(TAG, "LngPoint: " + lngPoint);
+======= */
+                showLocationPermission();
+                LocationRequest request = LocationRequest.create();
+                request.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+                request.setNumUpdates(1);
+                request.setInterval(0);
+                try {
+                    LocationServices.FusedLocationApi
+                            .requestLocationUpdates(mClient, request, new LocationListener() {
+                                @Override
+                                public void onLocationChanged(Location location) {
+                                    latPoint = location.getLatitude();
+                                    lngPoint = location.getLongitude();
+                                }
+                            });
+                }
+                catch(SecurityException e)
+                {
+                    Log.i(TAG, "Permission exception!!!");
+                }
+//>>>>>>> 580b7907913aaa169756a0be1c6c8cb5b9045408
 
             }
         });
@@ -58,7 +109,7 @@ public class OptionActivity extends AppCompatActivity {
         foodButton = (Button) findViewById(R.id.search_food_button);
         foodButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), SearchActivity.class);
+                Intent intent = new Intent(v.getContext(), SearchFoodActivity.class);
                 startActivity(intent);
             }
         });
@@ -70,15 +121,15 @@ public class OptionActivity extends AppCompatActivity {
             }
         });
     }
+    /*
     private Location getLastBestLocation() {
-        showLocationPermission();
         LocationManager mLocationManager = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
         try{
         Location locationGPS = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         Location locationNet = mLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
             long GPSLocationTime = 0;
-            if (null != locationGPS) { GPSLocationTime = locationGPS.getTime(); }
-
+            if (null != locationGPS) {
+                GPSLocationTime = locationGPS.getTime(); }
             long NetLocationTime = 0;
 
             if (null != locationNet) {
@@ -98,12 +149,12 @@ public class OptionActivity extends AppCompatActivity {
             Log.i(TAG,"Exception!!!");
         }
         return null;
-    }
+    }*/
     private void showLocationPermission() {
         int permissionCheck = ContextCompat.checkSelfPermission(
                 this, Manifest.permission.ACCESS_FINE_LOCATION);
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+            if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) getApplicationContext(),
                     Manifest.permission.ACCESS_FINE_LOCATION)) {
                 showExplanation("Permission Needed", "Rationale", Manifest.permission.ACCESS_FINE_LOCATION, REQUEST_PERMISSION_ACCESS_FINE_LOCATION);
             } else {
@@ -145,14 +196,47 @@ public class OptionActivity extends AppCompatActivity {
     }
 
     private void requestPermission(String permissionName, int permissionRequestCode) {
-        ActivityCompat.requestPermissions(this,
+        ActivityCompat.requestPermissions((Activity) getApplicationContext(),
                 new String[]{permissionName}, permissionRequestCode);
     }
-    /*
     @Override
-    protected void onStart() {
-        super.onStart();
-        setContentView(R.layout.option_activity);
+    protected void onResume() {
+        super.onResume();
+        int errorCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+        if (errorCode != ConnectionResult.SUCCESS) {
+            Dialog errorDialog = GooglePlayServicesUtil
+                    .getErrorDialog(errorCode, this, REQUEST_ERROR,
+                            new DialogInterface.OnCancelListener() {
+                                @Override
+                                public void onCancel(DialogInterface dialog) {
+                                    finish(); }
+                            });
+            errorDialog.show();
+        }
     }
-    */
+    @Override
+    public void onStart() {
+        super.onStart();
+        this.invalidateOptionsMenu();
+        mClient.connect();
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        mClient.disconnect();
+    }
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
 }

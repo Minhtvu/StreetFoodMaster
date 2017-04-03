@@ -21,7 +21,7 @@ public class SearchFoodActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.search_activity);
+        setContentView(R.layout.search_food_activity);
         ListView lv = (ListView)findViewById(R.id.listViewItem);
         ArrayList<String> arrayCountry = new ArrayList<>();
         arrayCountry.addAll(Arrays.asList(getResources().getStringArray(R.array.array_street)));
