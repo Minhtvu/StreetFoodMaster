@@ -88,7 +88,9 @@ public class OptionActivity extends Activity implements GoogleApiClient.Connecti
                                 public void onLocationChanged(Location location) {
                                     latPoint = location.getLatitude();
                                     lngPoint = location.getLongitude();
+
                                 }
+
                             });
                 }
                 catch(SecurityException e)

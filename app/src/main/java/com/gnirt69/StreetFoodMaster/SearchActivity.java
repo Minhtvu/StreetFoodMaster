@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
@@ -39,6 +40,8 @@ public class SearchActivity extends AppCompatActivity {
             public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
                 Log.i(TAG, "Place: " + place.getName());
+                Toast toast = Toast.makeText(getApplicationContext(),"Place: " + place.getName() + "\n" + "LatLong: " + place.getLatLng(), Toast.LENGTH_LONG);
+                toast.show();
             }
 
             @Override
