@@ -45,12 +45,13 @@
         android:text="@string/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/enter_location"
-        android:layout_height="wrap_content"
+    <fragment
+        android:id="@+id/place_autocomplete_fragment"
         android:layout_width="wrap_content"
-        android:ems="12"
-        android:background="@android:drawable/editbox_background"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+        />
     <Button
         android:id="@+id/search_button"
         android:text="@string/search_button"

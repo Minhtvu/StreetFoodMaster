@@ -277,7 +277,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="a5c31622b785a7ae58375690d33400898898dbd7">
+        sha1="dd7a8b0aba0d970838f4edaced9938f4b0cb54e5">
         <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_a539d51cd3dacd4cdee4fbfbb3d9147d6c738916/classes.dex" />
     </item>
     <item
@@ -511,7 +511,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="0f9360aa0344e643954bef41586702f4cda7d3bd">
+        sha1="bcf6eb2b3e80eb33882602f10babb16ace6092a0">
         <dex dex="/Users/minhtvu/Desktop/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_a93719d11f28fc6c47ecded5d90661b194c83488/classes.dex" />
     </item>
     <item

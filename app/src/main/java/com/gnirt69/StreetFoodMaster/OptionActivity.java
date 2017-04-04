@@ -66,16 +66,6 @@ public class OptionActivity extends Activity implements GoogleApiClient.Connecti
         currentButton = (Button) findViewById(R.id.search_location_button);
         currentButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                /*
-<<<<<<< HEAD
-                //Location current = getLastBestLocation();
-                //latPoint = current.getLatitude();
-                //lngPoint = current.getLongitude();
-                latPoint = 39.7555;
-                lngPoint = 105.2211;
-                Log.i(TAG, "LatPoint: " + latPoint);
-                Log.i(TAG, "LngPoint: " + lngPoint);
-======= */
                 showLocationPermission();
                 LocationRequest request = LocationRequest.create();
                 request.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
@@ -88,17 +78,13 @@ public class OptionActivity extends Activity implements GoogleApiClient.Connecti
                                 public void onLocationChanged(Location location) {
                                     latPoint = location.getLatitude();
                                     lngPoint = location.getLongitude();
-
                                 }
-
                             });
+                    Toast.makeText(getApplicationContext(),"Lat: " + latPoint + "; Long: " + lngPoint, Toast.LENGTH_LONG).show();
                 }
-                catch(SecurityException e)
-                {
-                    Log.i(TAG, "Permission exception!!!");
+                catch(SecurityException e){
+                    Log.i(TAG, "Exception: "+e);
                 }
-//>>>>>>> 580b7907913aaa169756a0be1c6c8cb5b9045408
-
             }
         });
         streetButton = (Button) findViewById(R.id.search_street_button);

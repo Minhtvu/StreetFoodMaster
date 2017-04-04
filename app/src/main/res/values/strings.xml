@@ -22,7 +22,7 @@
     <string name="welcome_text">Or, enter a location...</string>
     <string name="new_business">Create your business profile</string>
     <string name="title_option_activity">Advance Search</string>
-    <string name="title_search_activity">Search by street name</string>
+    <string name="title_search_activity">Search by address</string>
     <string name="title_search_food_activity">Search by food name</string>
     <string name="map">Location Direction</string>
     <string name="pictures">Pictures</string>
@@ -35,7 +35,7 @@
     <string name="title_surprise_activity">Suggestion</string>
     <string name="title_signup_activity">Sign Up</string>
     <string name="advance_button">Advance</string>
-    <string name="search_street_button">Search by Street Name</string>
+    <string name="search_street_button">Search by address</string>
     <string name="title_profile_activity">Profile</string>
     <string name="google_maps_api_key">AIzaSyDKrHTymDBeeqAI2n7IgQvHGua1CFbQm0I</string>
     <string-array name="array_street">

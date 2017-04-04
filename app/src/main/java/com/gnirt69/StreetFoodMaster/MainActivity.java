@@ -3,22 +3,29 @@ package com.gnirt69.StreetFoodMaster;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
+import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 
 /**
  * Created by minhtvu on 3/3/17.
  */
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "Place";
     private Button signInButton;
     private Button advanceButton;
     private Button searchButton;
     private Button surpriseButton;
     private Button signUpButton;
-    private EditText locationText;
+    PlaceAutocompleteFragment autocompleteFragment;
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -37,17 +44,25 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        locationText = (EditText) findViewById(R.id.enter_location);
+         autocompleteFragment = (PlaceAutocompleteFragment)
+                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+        autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(Place place) {
+                // TODO: Get info about the selected place.
+                Log.i(TAG, "Place: " + place.getName());
+            }
+
+            @Override
+            public void onError(Status status) {
+                // TODO: Handle the error.
+                Log.i(TAG, "An error occurred: " + status);
+            }
+        });
         searchButton = (Button) findViewById(R.id.search_button);
         searchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (locationText.getText().toString().length() > 0 ){
-                    Toast toast = Toast.makeText(getApplicationContext(),"The list of shop will be given based on your location input", Toast.LENGTH_LONG);
-                    toast.show();}
-                else{
-                    Toast toast = Toast.makeText(getApplicationContext(),"Enter a location", Toast.LENGTH_LONG);
-                    toast.show();
-                }
+
             }
         });
         surpriseButton = (Button) findViewById(R.id.surprise_button);
