@@ -18,6 +18,8 @@ public class SignInActivity extends AppCompatActivity {
     private EditText password;
     private Button signInButton;
     private Button signUpButton;
+    private String mUsername;
+    private String mPassword;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signin_activity);
@@ -27,7 +29,9 @@ public class SignInActivity extends AppCompatActivity {
         signInButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                if (emailAddress.getText().toString().length() == 0 || password.getText().toString().length() == 0) {
+                mUsername = emailAddress.getText().toString();
+                mPassword = password.getText().toString();
+                if (mUsername.length() == 0 || mPassword.length() == 0) {
                     Toast toast = Toast.makeText(getApplicationContext(), "Please enter your email and password", Toast.LENGTH_SHORT);
                     toast.show();
                 } else {
@@ -41,7 +45,7 @@ public class SignInActivity extends AppCompatActivity {
         signUpButton = (Button) findViewById(R.id.new_business);
         signUpButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(), SignUpActivity.class);
+                    Intent intent = new Intent(v.getContext(), RegisterActivity.class);
                     startActivity(intent);
             }
         });
@@ -55,7 +59,7 @@ public class SignInActivity extends AppCompatActivity {
     private class LoginHandler extends AsyncTask <Void, Void, String> {
         @Override
         protected String doInBackground(Void... params){
-            return new FlickrFetchr().getLogin("rgibson","Testing2");
+            return new NetworkHandler().getLogin(mUsername,mPassword);
         }
 
         @Override
