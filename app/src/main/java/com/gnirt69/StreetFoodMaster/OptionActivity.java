@@ -22,9 +22,13 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
+import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.maps.GoogleMap;
 
 /**
@@ -85,6 +89,27 @@ public class OptionActivity extends Activity implements GoogleApiClient.Connecti
         streetButton = (Button) findViewById(R.id.search_street_button);
         streetButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                /*PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
+                        getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+
+                autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+
+
+                    @Override
+                    public void onPlaceSelected(Place place) {
+                        // TODO: Get info about the selected place.
+                        Intent targetActivityIntent = LocatrActivity.newIntent( getApplicationContext(), place.getLatLng().latitude,
+                                place.getLatLng().longitude,null);
+                        startActivity(targetActivityIntent);
+                    }
+
+                    @Override
+                    public void onError(Status status) {
+                        // TODO: Handle the error.
+                        Log.i(TAG, "An error occurred: " + status);
+                    }
+                });*/
+
                 Intent intent = new Intent(v.getContext(), SearchStreetActivity.class);
                 startActivity(intent);
             }
