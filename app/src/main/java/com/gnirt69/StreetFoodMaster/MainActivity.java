@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         surpriseButton = (Button) findViewById(R.id.surprise_button);
         surpriseButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), SurpriseActivity.class);
+                Intent intent = new Intent(v.getContext(), LocatrActivity.class);
                 startActivity(intent);
             }
         });
