@@ -1,6 +1,7 @@
 package com.gnirt69.StreetFoodMaster;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -25,12 +26,14 @@ public class SignInActivity extends AppCompatActivity {
         signInButton = (Button) findViewById(R.id.email_sign_in_button);
         signInButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
                 if (emailAddress.getText().toString().length() == 0 || password.getText().toString().length() == 0) {
                     Toast toast = Toast.makeText(getApplicationContext(), "Please enter your email and password", Toast.LENGTH_SHORT);
                     toast.show();
                 } else {
-                    Toast toast = Toast.makeText(getApplicationContext(), "Logging in ...", Toast.LENGTH_LONG);
-                    toast.show();
+//                    Toast toast = Toast.makeText(getApplicationContext(), "Logging in ...", Toast.LENGTH_LONG);
+//                    toast.show();
+                    new LoginHandler().execute();
                     finish();
                 }
             }
@@ -49,4 +52,16 @@ public class SignInActivity extends AppCompatActivity {
         super.onStart();
         setContentView(R.layout.signin_activity);
     }*/
+    private class LoginHandler extends AsyncTask <Void, Void, String> {
+        @Override
+        protected String doInBackground(Void... params){
+            return new FlickrFetchr().getLogin("rgibson","Testing2");
+        }
+
+        @Override
+        protected void onPostExecute(String results){
+            Toast toast = Toast.makeText(getApplicationContext(), results, Toast.LENGTH_LONG);
+            toast.show();
+        }
+    }
 }
