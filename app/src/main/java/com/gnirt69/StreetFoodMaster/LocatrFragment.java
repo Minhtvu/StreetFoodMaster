@@ -90,8 +90,8 @@ public class LocatrFragment extends SupportMapFragment {
 
                 /*
                 final MarkerLab markerLab = MarkerLab.get(getActivity());
-                List<Marker> markers = markerLab.getMarkers();
-                for (Marker m : markers) {
+                List<Stand> markers = markerLab.getMarkers();
+                for (Stand m : markers) {
                     Log.i(TAG, "hia");
 
                     MarkerOptions current = new MarkerOptions().position(new LatLng(m.getLat(), m.getLng()))
@@ -102,11 +102,11 @@ public class LocatrFragment extends SupportMapFragment {
                     mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
 
                         @Override
-                        public boolean onMarkerClick(final com.google.android.gms.maps.model.Marker arg0) {
+                        public boolean onMarkerClick(final com.google.android.gms.maps.model.Stand arg0) {
 
-                            Marker m = markerLab.getMarker(arg0.getSnippet());
+                            Stand m = markerLab.getMarker(arg0.getSnippet());
                             Snackbar snackbar = Snackbar
-                                    .make(getView(), "Visited: " + m.getDate() + "\nThe weather was " + m.getWeatherDesc(), Snackbar.LENGTH_LONG);
+                                    .make(getView(), "Visited: " + m.getDate() + "\nThe weather was " + m.getAddress(), Snackbar.LENGTH_LONG);
                             View snackbarView = snackbar.getView();
                             TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
                             textView.setMaxLines(5);
@@ -328,8 +328,8 @@ public class LocatrFragment extends SupportMapFragment {
         /*
 
         final MarkerLab markerLab = MarkerLab.get(getActivity());
-        List<Marker> markers = markerLab.getMarkers();
-        for (Marker m : markers) {
+        List<Stand> markers = markerLab.getMarkers();
+        for (Stand m : markers) {
             Log.i(TAG, "hia");
 
             MarkerOptions current = new MarkerOptions().position(new LatLng(m.getLat(), m.getLng()))
@@ -340,11 +340,11 @@ public class LocatrFragment extends SupportMapFragment {
             mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
 
                 @Override
-                public boolean onMarkerClick(final com.google.android.gms.maps.model.Marker arg0) {
+                public boolean onMarkerClick(final com.google.android.gms.maps.model.Stand arg0) {
 
-                    Marker m = markerLab.getMarker(arg0.getSnippet());
+                    Stand m = markerLab.getMarker(arg0.getSnippet());
                     Snackbar snackbar = Snackbar
-                            .make(getView(), "Visited: " + m.getDate() + "\nThe weather was " + m.getWeatherDesc(), Snackbar.LENGTH_LONG);
+                            .make(getView(), "Visited: " + m.getDate() + "\nThe weather was " + m.getAddress(), Snackbar.LENGTH_LONG);
                     View snackbarView = snackbar.getView();
                     TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
                     textView.setMaxLines(5);
@@ -432,11 +432,11 @@ public class LocatrFragment extends SupportMapFragment {
 
             /*
 
-            Marker marker = new Marker();
+            Stand marker = new Stand();
             marker.setLat(mLocation.getLatitude());
             marker.setLng(mLocation.getLongitude());
             marker.setTemp(amount);
-            marker.setWeatherDesc(desc);
+            marker.setAddress(desc);
             MarkerLab.get(getActivity()).addMarker(marker);
 */
 
