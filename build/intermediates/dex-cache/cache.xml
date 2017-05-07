@@ -232,7 +232,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="073da15aa04947ed630ae09bd55643037a610403">
+        sha1="22122dd5a2aad640b7b6fa93351683bba99840ce">
         <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_298635245bbdf7ac3c94a301fb248b26ec348e4e/classes.dex" />
     </item>
     <item
@@ -241,7 +241,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="e46792f12c5d90d3d255dfbed07dfadff7afc393">
+        sha1="9fbcaa4b25946b9c99abc09f117ebc3fa1f97b8e">
         <dex dex="/Users/kyle/AndroidStudioProjects/StreetFoodMaster/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_7271ab94663d804bd5c1574089635b2b73578784/classes.dex" />
     </item>
     <item
