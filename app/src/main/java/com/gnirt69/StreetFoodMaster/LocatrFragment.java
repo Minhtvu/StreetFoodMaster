@@ -16,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -55,23 +56,35 @@ public class LocatrFragment extends SupportMapFragment {
             Manifest.permission.ACCESS_COARSE_LOCATION,
     };
     private static final int REQUEST_LOCATION_PERMISSIONS = 0;
-
+    private static final String LAT = "Latitude";
+    private static final String LONG = "Longitude";
+    private static final String FOOD = "Food";
     private GoogleApiClient mClient;
     private GoogleMap mMap;
     private Bitmap mMapImage;
     private Location mCurrentLocation;
+    private double latitude;
+    private double longitude;
+    private String food;
     private ArrayList<Stand> stands = new ArrayList<Stand>();
     //private RelativeLayout activityMain;
 
-    public static LocatrFragment newInstance() {
-        return new LocatrFragment();
+    public static LocatrFragment newInstance(double lat, double log, String foodx) {
+        Bundle args = new Bundle();
+        args.putDouble( LAT, lat);
+        args.putDouble(LONG, log);
+        args.putString( FOOD, foodx);
+        LocatrFragment frag = new LocatrFragment();
+        frag.setArguments( args );
+        return frag;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getActivity().invalidateOptionsMenu();
-
+        latitude = getArguments().getDouble( LAT );
+        longitude = getArguments().getDouble( LONG );
+        food = getArguments().getString(FOOD);
         mClient = new GoogleApiClient.Builder(getActivity()).addApi(LocationServices.API)
                 .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
                     @Override
@@ -286,7 +299,6 @@ public class LocatrFragment extends SupportMapFragment {
             Log.i(TAG, "Unableasdnasd");
             return;
         }
-
         //LatLng itemPoint = new LatLng(mMapItem.getLat(), mMapItem.getLon());
         LatLng myPoint = new LatLng(
                 mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude());

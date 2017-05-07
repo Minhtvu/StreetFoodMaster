@@ -7,7 +7,7 @@
     android:paddingLeft="64dp"
     android:paddingRight="64dp"
     android:paddingTop="16dp"
-    tools:context="com.gnirt69.StreetFoodMaster.SearchActivity"
+    tools:context="com.gnirt69.StreetFoodMaster.SearchStreetActivity"
     android:weightSum="1">
 
     <fragment

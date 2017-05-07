@@ -38,7 +38,7 @@
     <string name="search_street_button">Search by address</string>
     <string name="title_profile_activity">Profile</string>
     <string name="google_maps_api_key">AIzaSyDKrHTymDBeeqAI2n7IgQvHGua1CFbQm0I</string>
-    <string-array name="array_street">
+    <string-array name="array_food">
         <item>Burger</item>
         <item>Burrito</item>
         <item>Cheese</item>

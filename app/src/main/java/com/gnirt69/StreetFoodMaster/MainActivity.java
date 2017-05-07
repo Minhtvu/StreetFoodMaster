@@ -2,6 +2,7 @@ package com.gnirt69.StreetFoodMaster;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Button searchButton;
     private Button surpriseButton;
     private Button signUpButton;
+    private Place currentPlace;
     PlaceAutocompleteFragment autocompleteFragment;
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -44,13 +46,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-         autocompleteFragment = (PlaceAutocompleteFragment)
+        autocompleteFragment = (PlaceAutocompleteFragment)
                 getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
                 Log.i(TAG, "Place: " + place.getName());
+                currentPlace = place;
             }
 
             @Override
@@ -62,13 +65,23 @@ public class MainActivity extends AppCompatActivity {
         searchButton = (Button) findViewById(R.id.search_button);
         searchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
+                if (currentPlace == null)
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),"Please choose a specific place!", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+                else
+                {
+                    Intent targetActivityIntent = LocatrActivity.newIntent( getApplicationContext(), currentPlace.getLatLng().latitude,
+                            currentPlace.getLatLng().longitude,null);
+                    startActivity(targetActivityIntent);
+                }
             }
         });
         surpriseButton = (Button) findViewById(R.id.surprise_button);
         surpriseButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), LocatrActivity.class);
+                Intent intent = new Intent(v.getContext(), SurpriseActivity.class);
                 startActivity(intent);
             }
         });
