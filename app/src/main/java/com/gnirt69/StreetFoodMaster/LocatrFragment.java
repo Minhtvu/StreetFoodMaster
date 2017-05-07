@@ -87,6 +87,9 @@ public class LocatrFragment extends SupportMapFragment {
             @Override
             public void onMapReady(GoogleMap googleMap) {
                 mMap = googleMap;
+                LatLng coordinate = new LatLng(39.7555, -105.2211);
+                CameraUpdate yourLocation = CameraUpdateFactory.newLatLngZoom(coordinate, 10);
+                mMap.animateCamera(yourLocation);
 
                 /*
                 final MarkerLab markerLab = MarkerLab.get(getActivity());
