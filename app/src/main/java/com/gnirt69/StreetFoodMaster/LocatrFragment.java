@@ -28,6 +28,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONArray;
@@ -341,7 +342,7 @@ public class LocatrFragment extends SupportMapFragment {
             mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
 
                 @Override
-                public boolean onMarkerClick(final com.google.android.gms.maps.model.Stand arg0) {
+                public boolean onMarkerClick(final Marker arg0) {
 
                     Snackbar snackbar = Snackbar
                             .make(getView(), "Yay", Snackbar.LENGTH_LONG);
