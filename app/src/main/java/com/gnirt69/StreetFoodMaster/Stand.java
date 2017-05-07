@@ -10,7 +10,7 @@ import java.util.UUID;
 public class Stand {
 
     private UUID mId;
-    private Date mDate;
+    private String mName;
     private Double mLat;
     private Double mLng;
     private String mAddress;
@@ -24,7 +24,6 @@ public class Stand {
     public Stand(UUID id) {
 
         mId = id;
-        mDate = new Date();
     }
 
     public String getAddress() {
@@ -55,12 +54,12 @@ public class Stand {
         return mId;
     }
 
-    public Date getDate() {
-        return mDate;
+    public String getName() {
+        return mName;
     }
 
-    public void setDate(Date date) {
-        mDate = date;
+    public void setName(String name) {
+        mName = name;
     }
 
     public String getCity() {

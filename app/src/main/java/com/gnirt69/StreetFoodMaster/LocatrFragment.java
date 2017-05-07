@@ -37,6 +37,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -58,6 +59,7 @@ public class LocatrFragment extends SupportMapFragment {
     private GoogleMap mMap;
     private Bitmap mMapImage;
     private Location mCurrentLocation;
+    private ArrayList<Stand> stands = new ArrayList<Stand>();
     //private RelativeLayout activityMain;
 
     public static LocatrFragment newInstance() {
@@ -328,6 +330,31 @@ public class LocatrFragment extends SupportMapFragment {
 
         mMap.clear();
 
+        for (Stand s : stands) {
+            Log.i(TAG, "hia");
+
+            MarkerOptions current = new MarkerOptions().position(new LatLng(s.getLat(), s.getLng()))
+                    .title("lat/lng"+s.getLat()+"   "+s.getLng())
+                    .snippet(s.getId().toString());
+
+            mMap.addMarker(current);
+            mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+
+                @Override
+                public boolean onMarkerClick(final com.google.android.gms.maps.model.Stand arg0) {
+
+                    Snackbar snackbar = Snackbar
+                            .make(getView(), "Yay", Snackbar.LENGTH_LONG);
+                    View snackbarView = snackbar.getView();
+                    TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+                    textView.setMaxLines(5);
+                    snackbar.show();
+
+                    return false;
+                }
+
+            });
+        }
         /*
 
         final MarkerLab markerLab = MarkerLab.get(getActivity());
@@ -370,6 +397,14 @@ public class LocatrFragment extends SupportMapFragment {
         JSONObject data = null;
         String temperature;
         String desc;
+        String name;
+        Double lat;
+        Double lng;
+        String address;
+        String city;
+        String state;
+        Integer zip;
+        String foodtype;
 
         @Override
         protected Void doInBackground(Location... params) {
@@ -405,6 +440,16 @@ public class LocatrFragment extends SupportMapFragment {
                 JSONObject hi = main1.getJSONObject(0);
                 desc = hi.getString("description");
 
+
+                Stand stand = new Stand();
+                stand.setName(name);
+                stand.setLat(lat);
+                stand.setLng(lng);
+                stand.setFoodtype(foodtype);
+                stand.setAddress(address);
+                stand.setCity(city);
+                stand.setState(state);
+                stand.setZip(zip);
 
             } catch (Exception e) {
 
