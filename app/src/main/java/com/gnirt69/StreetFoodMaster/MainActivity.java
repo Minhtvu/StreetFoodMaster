@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent targetActivityIntent = LocatrActivity.newIntent( getApplicationContext(), currentPlace.getLatLng().latitude,
                             currentPlace.getLatLng().longitude,null);
                     startActivity(targetActivityIntent);
+                    currentPlace = null;
                 }
             }
         });
