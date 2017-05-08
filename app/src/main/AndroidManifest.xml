@@ -60,7 +60,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.gnirt69.StreetFoodMaster.OptionActivity" />
         </activity>
-        <activity android:name="com.gnirt69.StreetFoodMaster.SignUpActivity"
+        <activity android:name="com.gnirt69.StreetFoodMaster.RegisterActivity"
             android:parentActivityName="com.gnirt69.StreetFoodMaster.MainActivity"
             android:label= "@string/title_signup_activity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->

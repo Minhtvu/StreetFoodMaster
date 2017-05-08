@@ -8,9 +8,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -22,25 +25,38 @@ import java.util.List;
  * all of the problems I have had
  */
 
-public class FlickrFetchr {
+public class NetworkHandler {
     private static final String TAG = "FlickrFetchr";
 
     private static final String FETCH_RECENTS_METHOD = "flickr.photos.getRecent";
     private static final String SEARCH_METHOD = "flickr.photos.search";
     private static final String ENDPOINT = "http://45.55.220.154:3000";
 
-    public byte[] getUrlBytes(String urlSpec) throws IOException {
+    public byte[] getUrlBytes(String urlSpec, String method, Uri.Builder body) throws IOException {
         URL url = new URL(urlSpec);
         HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-        connection.setRequestMethod("GET");
+        connection.setRequestMethod(method);
+        Log.i(TAG, urlSpec);
         try {
-            ByteArrayOutputStream out = new ByteArrayOutputStream();
-            InputStream in = connection.getInputStream();
+            switch (method) {
+                case "GET":
+                    break;
+                case "POST":
+                    OutputStream os = connection.getOutputStream();
+                    BufferedWriter writer = new BufferedWriter(
+                            new OutputStreamWriter(os, "UTF-8"));
+                    writer.write(body.build().getEncodedQuery());
+                    writer.flush();
+                    writer.close();
+                    os.close();
+            }
             if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 throw new IOException(connection.getResponseMessage() +
                         ": with " +
                         urlSpec);
             }
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            InputStream in = connection.getInputStream();
             int bytesRead = 0;
             byte[] buffer = new byte[1024];
             while ((bytesRead = in.read(buffer)) > 0) {
@@ -53,14 +69,14 @@ public class FlickrFetchr {
         }
     }
 
-    public String getUrlString(String urlSpec) throws IOException {
-        return new String(getUrlBytes(urlSpec));
+    public String getUrlString(String urlSpec, String method, Uri.Builder body) throws IOException {
+        return new String(getUrlBytes(urlSpec, method, body));
     }
 
-    private JSONObject getJson(String url) {
+    private JSONObject getJson(String url, String method, Uri.Builder body) {
 
         try {
-            String jsonString = getUrlString(url);
+            String jsonString = getUrlString(url, method, body);
             Log.i(TAG, "Received JSON: " + jsonString);
             JSONObject jsonBody = new JSONObject(jsonString);
             //parseItems(items, jsonBody);
@@ -81,13 +97,45 @@ public class FlickrFetchr {
                 +"/"+password;
     }
 
+    private String buildRegister(){
+        return ENDPOINT
+                +"/register";
+    }
+
     public String getLogin(String uname, String pass) {
         String url = buildLogin(uname, pass);
-        String results = getJson(url).toString();
+        String results = getJson(url, "GET", null).toString();
         Log.i(TAG, results);
         return results;
     }
 
+    public String postRegister(String username,
+                               String password,
+                               String first,
+                               String last,
+                               String email,
+                               String phone){
+        Uri.Builder body = new Uri.Builder()
+                .appendQueryParameter("username", username)
+                .appendQueryParameter("password", password)
+                .appendQueryParameter("email", email)
+                .appendQueryParameter("first", first)
+                .appendQueryParameter("last", last)
+                .appendQueryParameter("phone", phone);
+        String results = getJson(buildRegister(), "POST", body).toString();
+        Log.i(TAG, results);
+        return results;
+    }
+
+    public String getStandsByLLR(String lat, String lng, String radius){
+        String results = getJson(ENDPOINT
+                +"/stands"
+                +"/"+lat
+                +"/"+lng
+                +"/"+radius, "GET", null).toString();
+        Log.i(TAG, results);
+        return results;
+    }
 //    private void parseItems(List<GalleryItem> items, JSONObject jsonBody)
 //            throws IOException, JSONException {
 //

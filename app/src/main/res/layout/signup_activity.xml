@@ -7,55 +7,55 @@
               android:gravity="center"
               android:orientation="vertical"
               android:weightSum="1"
-              tools:context="com.gnirt69.StreetFoodMaster.SignUpActivity"> >
+              tools:context="com.gnirt69.StreetFoodMaster.RegisterActivity"> >
 
-    <TextView
-        android:id="@+id/name_text"
-        android:text="@string/name_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/enter_name"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:ems="12"
-        android:background="@android:drawable/editbox_background"/>
+    <!--<TextView-->
+        <!--android:id="@+id/name_text"-->
+        <!--android:text="@string/name_text"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"/>-->
+    <!--<EditText-->
+        <!--android:id="@+id/enter_name"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:ems="12"-->
+        <!--android:background="@android:drawable/editbox_background"/>-->
 
-    <TextView
-        android:id="@+id/mission_text"
-        android:text="@string/mission_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/enter_mission"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:ems="12"
-        android:background="@android:drawable/editbox_background"/>
+    <!--<TextView-->
+        <!--android:id="@+id/mission_text"-->
+        <!--android:text="@string/mission_text"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"/>-->
+    <!--<EditText-->
+        <!--android:id="@+id/enter_mission"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:ems="12"-->
+        <!--android:background="@android:drawable/editbox_background"/>-->
 
-    <TextView
-        android:id="@+id/hours_text"
-        android:text="@string/hours_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/enter_hours"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:ems="12"
-        android:background="@android:drawable/editbox_background"/>
+    <!--<TextView-->
+        <!--android:id="@+id/hours_text"-->
+        <!--android:text="@string/hours_text"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"/>-->
+    <!--<EditText-->
+        <!--android:id="@+id/enter_hours"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:ems="12"-->
+        <!--android:background="@android:drawable/editbox_background"/>-->
 
-    <TextView
-        android:id="@+id/location_text"
-        android:text="@string/location_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/enter_locationn"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:ems="12"
-        android:background="@android:drawable/editbox_background"/>
+    <!--<TextView-->
+        <!--android:id="@+id/location_text"-->
+        <!--android:text="@string/location_text"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"/>-->
+    <!--<EditText-->
+        <!--android:id="@+id/enter_locationn"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:ems="12"-->
+        <!--android:background="@android:drawable/editbox_background"/>-->
 
     <TextView
         android:id="@+id/contact_text"
