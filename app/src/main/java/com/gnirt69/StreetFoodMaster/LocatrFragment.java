@@ -62,7 +62,6 @@ public class LocatrFragment extends SupportMapFragment {
     private double latitude;
     private double longitude;
     private String food;
-    private final int REQUEST_PERMISSION_ACCESS_FINE_LOCATION = 1337;
     private ArrayList<Stand> stands = new ArrayList<Stand>();
 
     public static LocatrFragment newInstance(double lat, double log, String foodx) {
@@ -120,6 +119,7 @@ public class LocatrFragment extends SupportMapFragment {
         else //Search by address or current location
         {
             Log.i(TAG, food + latitude + longitude);
+            // query by lat long
         }
 
     }
