@@ -16,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -28,6 +29,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONArray;
@@ -37,6 +39,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -53,22 +56,35 @@ public class LocatrFragment extends SupportMapFragment {
             Manifest.permission.ACCESS_COARSE_LOCATION,
     };
     private static final int REQUEST_LOCATION_PERMISSIONS = 0;
-
+    private static final String LAT = "Latitude";
+    private static final String LONG = "Longitude";
+    private static final String FOOD = "Food";
     private GoogleApiClient mClient;
     private GoogleMap mMap;
     private Bitmap mMapImage;
     private Location mCurrentLocation;
+    private double latitude;
+    private double longitude;
+    private String food;
+    private ArrayList<Stand> stands = new ArrayList<Stand>();
     //private RelativeLayout activityMain;
 
-    public static LocatrFragment newInstance() {
-        return new LocatrFragment();
+    public static LocatrFragment newInstance(double lat, double log, String foodx) {
+        Bundle args = new Bundle();
+        args.putDouble( LAT, lat);
+        args.putDouble(LONG, log);
+        args.putString( FOOD, foodx);
+        LocatrFragment frag = new LocatrFragment();
+        frag.setArguments( args );
+        return frag;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getActivity().invalidateOptionsMenu();
-
+        latitude = getArguments().getDouble( LAT );
+        longitude = getArguments().getDouble( LONG );
+        food = getArguments().getString(FOOD);
         mClient = new GoogleApiClient.Builder(getActivity()).addApi(LocationServices.API)
                 .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
                     @Override
@@ -283,7 +299,6 @@ public class LocatrFragment extends SupportMapFragment {
             Log.i(TAG, "Unableasdnasd");
             return;
         }
-
         //LatLng itemPoint = new LatLng(mMapItem.getLat(), mMapItem.getLon());
         LatLng myPoint = new LatLng(
                 mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude());
@@ -328,6 +343,31 @@ public class LocatrFragment extends SupportMapFragment {
 
         mMap.clear();
 
+        for (Stand s : stands) {
+            Log.i(TAG, "hia");
+
+            MarkerOptions current = new MarkerOptions().position(new LatLng(s.getLat(), s.getLng()))
+                    .title("lat/lng"+s.getLat()+"   "+s.getLng())
+                    .snippet(s.getId().toString());
+
+            mMap.addMarker(current);
+            mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+
+                @Override
+                public boolean onMarkerClick(final Marker arg0) {
+
+                    Snackbar snackbar = Snackbar
+                            .make(getView(), "Yay", Snackbar.LENGTH_LONG);
+                    View snackbarView = snackbar.getView();
+                    TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+                    textView.setMaxLines(5);
+                    snackbar.show();
+
+                    return false;
+                }
+
+            });
+        }
         /*
 
         final MarkerLab markerLab = MarkerLab.get(getActivity());
@@ -370,6 +410,14 @@ public class LocatrFragment extends SupportMapFragment {
         JSONObject data = null;
         String temperature;
         String desc;
+        String name;
+        Double lat;
+        Double lng;
+        String address;
+        String city;
+        String state;
+        Integer zip;
+        String foodtype;
 
         @Override
         protected Void doInBackground(Location... params) {
@@ -405,6 +453,16 @@ public class LocatrFragment extends SupportMapFragment {
                 JSONObject hi = main1.getJSONObject(0);
                 desc = hi.getString("description");
 
+
+                Stand stand = new Stand();
+                stand.setName(name);
+                stand.setLat(lat);
+                stand.setLng(lng);
+                stand.setFoodtype(foodtype);
+                stand.setAddress(address);
+                stand.setCity(city);
+                stand.setState(state);
+                stand.setZip(zip);
 
             } catch (Exception e) {
 

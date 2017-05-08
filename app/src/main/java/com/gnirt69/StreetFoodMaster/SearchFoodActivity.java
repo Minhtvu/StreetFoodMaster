@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,20 +24,20 @@ public class SearchFoodActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_food_activity);
         ListView lv = (ListView)findViewById(R.id.listViewItem);
-        ArrayList<String> arrayCountry = new ArrayList<>();
-        arrayCountry.addAll(Arrays.asList(getResources().getStringArray(R.array.array_street)));
+        final ArrayList<String> arrayFood= new ArrayList<>();
+        arrayFood.addAll(Arrays.asList(getResources().getStringArray(R.array.array_food)));
 
         adapter = new ArrayAdapter<>(
                 SearchFoodActivity.this,
                 android.R.layout.simple_list_item_1,
-                arrayCountry);
+                arrayFood);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent,
                                     View view, int position, long id){
-                Intent intent = new Intent(view.getContext(), ProfileActivity.class);
-                startActivity(intent);
+                Intent targetActivityIntent = LocatrActivity.newIntent( getApplicationContext(), -1000, -1000, arrayFood.get(position));
+                startActivity(targetActivityIntent);
             }
         });
     }

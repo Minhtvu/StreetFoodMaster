@@ -3,7 +3,6 @@ package com.gnirt69.StreetFoodMaster;
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,7 +14,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -24,9 +22,13 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
+import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.maps.GoogleMap;
 
 /**
@@ -38,11 +40,7 @@ public class OptionActivity extends Activity implements GoogleApiClient.Connecti
     private Button streetButton;
     private Button foodButton;
     private Button signInButton;
-    private Location mLastLocation;
-    public  LocationManager mLocationManager;
     private GoogleApiClient mClient;
-    private GoogleMap mMap;
-    private Location mCurrentLocation;
     private static final int REQUEST_ERROR = 0;
     private double latPoint;
     private double lngPoint;
@@ -80,7 +78,8 @@ public class OptionActivity extends Activity implements GoogleApiClient.Connecti
                                     lngPoint = location.getLongitude();
                                 }
                             });
-                    Toast.makeText(getApplicationContext(),"Lat: " + latPoint + "; Long: " + lngPoint, Toast.LENGTH_LONG).show();
+                    Intent targetActivityIntent = LocatrActivity.newIntent( getApplicationContext(), latPoint,lngPoint,null);
+                    startActivity(targetActivityIntent);
                 }
                 catch(SecurityException e){
                     Log.i(TAG, "Exception: "+e);
@@ -90,7 +89,28 @@ public class OptionActivity extends Activity implements GoogleApiClient.Connecti
         streetButton = (Button) findViewById(R.id.search_street_button);
         streetButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), SearchActivity.class);
+                /*PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
+                        getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+
+                autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+
+
+                    @Override
+                    public void onPlaceSelected(Place place) {
+                        // TODO: Get info about the selected place.
+                        Intent targetActivityIntent = LocatrActivity.newIntent( getApplicationContext(), place.getLatLng().latitude,
+                                place.getLatLng().longitude,null);
+                        startActivity(targetActivityIntent);
+                    }
+
+                    @Override
+                    public void onError(Status status) {
+                        // TODO: Handle the error.
+                        Log.i(TAG, "An error occurred: " + status);
+                    }
+                });*/
+
+                Intent intent = new Intent(v.getContext(), SearchStreetActivity.class);
                 startActivity(intent);
             }
         });
@@ -109,45 +129,11 @@ public class OptionActivity extends Activity implements GoogleApiClient.Connecti
             }
         });
     }
-    /*
-    private Location getLastBestLocation() {
-        LocationManager mLocationManager = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
-        try{
-        Location locationGPS = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        Location locationNet = mLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-            long GPSLocationTime = 0;
-            if (null != locationGPS) {
-                GPSLocationTime = locationGPS.getTime(); }
-            long NetLocationTime = 0;
-
-            if (null != locationNet) {
-                NetLocationTime = locationNet.getTime();
-            }
-
-            if ( 0 < GPSLocationTime - NetLocationTime ) {
-                Log.i(TAG, "Here: " + latPoint);
-                return locationGPS;
-            }
-            else {
-                Log.i(TAG, "Here1: " + latPoint);
-                return locationNet;
-            }}
-        catch(SecurityException e)
-        {
-            Log.i(TAG,"Exception!!!");
-        }
-        return null;
-    }*/
     private void showLocationPermission() {
         int permissionCheck = ContextCompat.checkSelfPermission(
                 this, Manifest.permission.ACCESS_FINE_LOCATION);
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) getApplicationContext(),
-                    Manifest.permission.ACCESS_FINE_LOCATION)) {
-                showExplanation("Permission Needed", "Rationale", Manifest.permission.ACCESS_FINE_LOCATION, REQUEST_PERMISSION_ACCESS_FINE_LOCATION);
-            } else {
                 requestPermission(Manifest.permission.ACCESS_FINE_LOCATION, REQUEST_PERMISSION_ACCESS_FINE_LOCATION);
-            }
         } else {
             Toast.makeText(this, "Permission (already) Granted!", Toast.LENGTH_SHORT).show();
         }
@@ -167,24 +153,8 @@ public class OptionActivity extends Activity implements GoogleApiClient.Connecti
                 }
         }
     }
-
-    private void showExplanation(String title,
-                                 String message,
-                                 final String permission,
-                                 final int permissionRequestCode) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(title)
-                .setMessage(message)
-                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        requestPermission(permission, permissionRequestCode);
-                    }
-                });
-        builder.create().show();
-    }
-
     private void requestPermission(String permissionName, int permissionRequestCode) {
-        ActivityCompat.requestPermissions((Activity) getApplicationContext(),
+        ActivityCompat.requestPermissions(OptionActivity.this,
                 new String[]{permissionName}, permissionRequestCode);
     }
     @Override
