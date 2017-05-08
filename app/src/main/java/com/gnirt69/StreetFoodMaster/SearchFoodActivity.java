@@ -19,10 +19,14 @@ import java.util.Arrays;
 public class SearchFoodActivity extends AppCompatActivity {
 
     ArrayAdapter<String> adapter;
+    private double latitude;
+    private double longitude;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_food_activity);
+        latitude = getIntent().getDoubleExtra("Lat", 0);
+        longitude = getIntent().getDoubleExtra("Long", 0);
         ListView lv = (ListView)findViewById(R.id.listViewItem);
         final ArrayList<String> arrayFood= new ArrayList<>();
         arrayFood.addAll(Arrays.asList(getResources().getStringArray(R.array.array_food)));
@@ -36,7 +40,7 @@ public class SearchFoodActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent,
                                     View view, int position, long id){
-                Intent targetActivityIntent = LocatrActivity.newIntent( getApplicationContext(), -1000, -1000, arrayFood.get(position));
+                Intent targetActivityIntent = LocatrActivity.newIntent( getApplicationContext(), latitude, longitude, arrayFood.get(position));
                 startActivity(targetActivityIntent);
             }
         });
