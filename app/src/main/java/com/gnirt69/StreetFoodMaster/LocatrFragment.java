@@ -132,7 +132,7 @@ public class LocatrFragment extends SupportMapFragment {
             MarkerOptions current = new MarkerOptions()
                     .position(new LatLng(m.getLat(), m.getLng()))
                     .title(m.getName() + " - " + m.getAddress())
-                    .snippet(m.getId().toString());
+                    .snippet(Integer.toString(m.getId()));
             mMap.addMarker(current);
         }
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
@@ -155,7 +155,7 @@ public class LocatrFragment extends SupportMapFragment {
     }
     private Stand getStand(Marker arg0) {
         for (Stand m : stands) {
-            if (m.getId().toString() == arg0.getSnippet())
+            if (Integer.toString(m.getId()) == arg0.getSnippet())
                 return m;
         }
         //Should never happen
