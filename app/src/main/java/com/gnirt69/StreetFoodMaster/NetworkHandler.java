@@ -110,6 +110,10 @@ public class NetworkHandler {
         return results;
     }
 
+    public JSONObject getStand(int standID){
+        return getJson(ENDPOINT+"/stands/"+Integer.toString(standID),"GET",null,null);
+    }
+
     public JSONObject postRegister(String username,
                                String password,
                                String first,
@@ -182,8 +186,8 @@ public class NetworkHandler {
         return results;
     }
 
-    public String getStandsByLLR(String lat, String lng, String radius){
-        String results = getJson(ENDPOINT
+    public JSONObject getStandsByLLR(String lat, String lng, String radius){
+        JSONObject results = getJson(ENDPOINT
                 +"/stands"
                 +"/"+lat
                 +"/"+lng

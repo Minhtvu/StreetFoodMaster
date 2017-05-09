@@ -178,15 +178,11 @@ public class LocatrFragment extends SupportMapFragment {
             public boolean onMarkerClick(Marker arg0 ) {
                 Log.i(TAG, arg0.getSnippet() + " ");
                 Stand chosen = getStand(arg0);
-                Intent i = new Intent(getContext(), ProfileActivity.class);
-                i.putExtra("NAME", chosen.getName());
-                i.putExtra("LAT", chosen.getLat());
-                i.putExtra("LONG", chosen.getLng());
-                i.putExtra("ADDRESS", chosen.getAddress());
-                i.putExtra("CITY", chosen.getCity());
-                i.putExtra("STATE", chosen.getState());
-                i.putExtra("ZIP", chosen.getZip());
-                i.putExtra("FOODTYPE", chosen.getFoodtype());
+                Intent i = new Intent(getContext(), StandActivity.class);
+                Log.i(TAG, Integer.toString(chosen.getId()));
+                i.putExtra("standID", chosen.getId());
+                i.putExtra("update", false);
+                i.putExtra("authToken", (String) null);
                 startActivity(i);
                 return false;
             }
@@ -229,15 +225,11 @@ public class LocatrFragment extends SupportMapFragment {
             @Override
             public boolean onMarkerClick(Marker arg0 ) {
                 Stand chosen = getStand(arg0);
-                Intent i = new Intent(getContext(), ProfileActivity.class);
-                i.putExtra("NAME", chosen.getName());
-                i.putExtra("LAT", chosen.getLat());
-                i.putExtra("LONG", chosen.getLng());
-                i.putExtra("ADDRESS", chosen.getAddress());
-                i.putExtra("CITY", chosen.getCity());
-                i.putExtra("STATE", chosen.getState());
-                i.putExtra("ZIP", chosen.getZip());
-                i.putExtra("FOODTYPE", chosen.getFoodtype());
+                Intent i = new Intent(getContext(), StandActivity.class);
+                Log.i(TAG, Integer.toString(chosen.getId()));
+                i.putExtra("standID", chosen.getId());
+                i.putExtra("update", false);
+                i.putExtra("authToken", (String) null);
                 startActivity(i);
                 return false;
             }

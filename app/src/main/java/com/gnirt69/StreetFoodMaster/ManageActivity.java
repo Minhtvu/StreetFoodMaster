@@ -19,8 +19,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class ManageActivity extends AppCompatActivity {
-    private int mUserID;
-    private String mAuthToken;
+    private static int mUserID;
+    private static String mAuthToken;
     private ArrayList<Stand> mOwnedStands;
     private ListView mStandsList;
     private ArrayList<String> mStandsNames;
@@ -30,6 +30,11 @@ public class ManageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage_activity);
+        if(savedInstanceState != null) {
+            mUserID = savedInstanceState.getInt("userID");
+            mAuthToken = savedInstanceState.getString("authToken");
+        }
+
         mOwnedStands = new ArrayList<>();
         mStandsNames = new ArrayList<>();
         mStandsList = (ListView) findViewById(R.id.manage_stands_list);
@@ -47,9 +52,11 @@ public class ManageActivity extends AppCompatActivity {
 
         });
 
-        Bundle extras = getIntent().getExtras();
-        mUserID = extras.getInt("userID");
-        mAuthToken = extras.getString("authToken");
+        if(mAuthToken == null){
+            Bundle extras = getIntent().getExtras();
+            mUserID = extras.getInt("userID");
+            mAuthToken = extras.getString("authToken");
+        }
         Log.i("manage", Integer.toString(mUserID)+" "+mAuthToken);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -75,10 +82,12 @@ public class ManageActivity extends AppCompatActivity {
         new LookupHandler().execute();
     }
 
-//    @Override
-//    protected void onSaveInstanceState(){
-//        super.onSaveInstanceState();
-//    }
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceState){
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt("userID", mUserID);
+        savedInstanceState.putString("authToken", mAuthToken);
+    }
 
     private class LookupHandler extends AsyncTask<Void, Void, JSONObject> {
         @Override
