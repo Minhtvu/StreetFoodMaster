@@ -1,12 +1,16 @@
 package com.gnirt69.StreetFoodMaster;
 
+import android.*;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.AsyncTask;
+import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,6 +18,11 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,6 +36,17 @@ public class AddStandActivity extends AppCompatActivity {
 //            Manifest.permission.ACCESS_FINE_LOCATION,
 //            Manifest.permission.ACCESS_COARSE_LOCATION,
 //    };
+
+    private Location mLocation;
+    private static GoogleApiClient mClient;
+    private static final String TAG = "AddStand";
+
+
+    private static final String[] LOCATION_PERMISSIONS = new String[]{
+            android.Manifest.permission.ACCESS_FINE_LOCATION,
+            android.Manifest.permission.ACCESS_COARSE_LOCATION,
+    };
+    private static final int REQUEST_LOCATION_PERMISSIONS = 0;
     private String mName;
     private String mFoodType;
     private String mAddress;
@@ -52,6 +72,19 @@ public class AddStandActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_stand_activity);
+        mClient = new GoogleApiClient.Builder(this).addApi(LocationServices.API)
+                .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
+                    @Override
+                    public void onConnected(@Nullable Bundle bundle) {
+                    }
+
+                    @Override
+                    public void onConnectionSuspended(int i) {
+
+                    }
+                })
+                .build();
+
         mNewStandName = (EditText) findViewById(R.id.new_stand_name);
         mNewStandLat = (EditText) findViewById(R.id.new_stand_lat);
         mNewStandLng = (EditText) findViewById(R.id.new_stand_lng);
@@ -72,13 +105,14 @@ public class AddStandActivity extends AppCompatActivity {
         mNewStandLatLng = (Button) findViewById(R.id.new_stand_LatLng_Button);
         mNewStandLatLng.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-//                if(ContextCompat.checkSelfPermission(getActivity(), LOCATION_PERMISSIONS[0])) {
-//                    LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-//                    Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-//                    double longitude = location.getLongitude();
-//                    double latitude = location.getLatitude();
-//                }
+                if (hasLocationPermission()) {
+                    findImage();
+                } else {
+                    requestPermissions(LOCATION_PERMISSIONS,
+                            REQUEST_LOCATION_PERMISSIONS);
+                }
+                mNewStandLat.setText(Double.toString(mLat));
+                mNewStandLng.setText(Double.toString(mLng));
             }
         });
 
@@ -88,6 +122,68 @@ public class AddStandActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private boolean hasLocationPermission() {
+        int result = ContextCompat
+                .checkSelfPermission(this, LOCATION_PERMISSIONS[0]);
+        return result == PackageManager.PERMISSION_GRANTED;
+    }
+
+    /**
+     *
+     *
+     * Permissions requesting
+     *
+     * @param requestCode - code for permissions
+     * @param permissions - what permissions are available
+     * @param grantResults - response if permission granted
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                           int[] grantResults) {
+
+        switch (requestCode) {
+            case REQUEST_LOCATION_PERMISSIONS:
+                if (hasLocationPermission()) {
+                    findImage();
+                }
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+    }
+
+    /**
+     *
+     * was used in the lab for finding image, I kept it for simplicity on locating location
+     */
+
+    private void findImage() {
+        LocationRequest request = LocationRequest.create();
+        request.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        request.setNumUpdates(1);
+        request.setInterval(0);
+//        try {
+//            LocationServices.FusedLocationApi.getLastLocation()
+//        }
+
+
+        try {
+            LocationServices.FusedLocationApi
+                    .requestLocationUpdates(mClient, request, new LocationListener() {
+                        @Override
+                        public void onLocationChanged(Location location) {
+                            Log.i(TAG, "Got a fix: " + location);
+                            mLocation = location;
+                            mLat = location.getLatitude();
+                            mLng = location.getLongitude();
+                        }
+                    });
+        } catch(SecurityException e) {
+            Log.i(TAG, "Unable to decode bitmap wat");
+            return;
+        }
     }
 
     private class LookupHandler extends AsyncTask<Void, Void, JSONObject> {
