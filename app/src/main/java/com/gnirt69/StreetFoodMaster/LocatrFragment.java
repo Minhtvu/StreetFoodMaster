@@ -3,25 +3,16 @@ package com.gnirt69.StreetFoodMaster;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
@@ -32,19 +23,14 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Kyle DiSandro
@@ -63,16 +49,26 @@ public class LocatrFragment extends SupportMapFragment {
     private double latitude;
     private double longitude;
     private String food;
-    private ArrayList<Stand> stands = new ArrayList<Stand>();
+    private ArrayList<Stand> stands = new ArrayList<>();
+    private ArrayList<String> mStandsNames = new ArrayList<>();
     private Location mLocation;
-
 
     private static final String[] LOCATION_PERMISSIONS = new String[]{
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.ACCESS_COARSE_LOCATION,
     };
+
     private static final int REQUEST_LOCATION_PERMISSIONS = 0;
 
+
+    /**
+     * Initial Constructor for the fragment
+     *
+     * @param lat - latitude
+     * @param lng - longitude
+     * @param food - what type of food that fragment is
+     * @return
+     */
     public static LocatrFragment newInstance(double lat, double lng, String food) {
         Bundle args = new Bundle();
         args.putDouble( LAT, lat);
@@ -82,6 +78,12 @@ public class LocatrFragment extends SupportMapFragment {
         frag.setArguments( args );
         return frag;
     }
+
+    /**
+     * Create function
+     *
+     * @param savedInstanceState - Saved state
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,7 +121,7 @@ public class LocatrFragment extends SupportMapFragment {
             @Override
             public void onClick(View view) {
                 if (hasLocationPermission()) {
-                    findImage();
+                    findCurrentLocation();
                 } else {
                     requestPermissions(LOCATION_PERMISSIONS,
                             REQUEST_LOCATION_PERMISSIONS);
@@ -131,9 +133,17 @@ public class LocatrFragment extends SupportMapFragment {
         searchInDatabase();
         updateUI();
     }
+
+    /**
+     * handle database searching needs
+     *
+     */
     private void searchInDatabase(){
         //TODO: Implement a query to search in the database to get the data back to stands
         //Search by food name
+
+        new StandHandler().execute();
+
         if (food !=  null )
         {
             //query by Foodtype && current location (lat,long)
@@ -147,6 +157,10 @@ public class LocatrFragment extends SupportMapFragment {
         }
 
     }
+
+    /**
+     * Updates the screen and marker settings on the map
+     */
     private void updateUI() {
         if (mMap == null){
             Log.i(TAG, "Error");
@@ -162,6 +176,7 @@ public class LocatrFragment extends SupportMapFragment {
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker arg0 ) {
+                Log.i(TAG, arg0.getSnippet() + " ");
                 Stand chosen = getStand(arg0);
                 Intent i = new Intent(getContext(), ProfileActivity.class);
                 i.putExtra("NAME", chosen.getName());
@@ -177,15 +192,27 @@ public class LocatrFragment extends SupportMapFragment {
             }
         });
     }
+
+    /**
+     * Looks through the stands to find a correctly matching stand to an ID
+     *
+     *
+     * @param arg0 - marker that we need to match to an ID
+     * @return - if failing return a new stand
+     */
     private Stand getStand(Marker arg0) {
         for (Stand m : stands) {
-            if (Integer.toString(m.getId()) == arg0.getSnippet())
+            if (Integer.toString(m.getId()).equalsIgnoreCase(arg0.getSnippet()))
                 return m;
         }
         //Should never happen
         return new Stand();
     }
 
+    /**
+     * Show all the markers in the map and set onclick listeners properly
+     *
+     */
     public void showAllMarkers() {
 
         mMap.clear();
@@ -218,7 +245,11 @@ public class LocatrFragment extends SupportMapFragment {
 
     }
 
-
+    /**
+     * check for the proper permissions
+     *
+     * @return
+     */
     private boolean hasLocationPermission() {
         int result = ContextCompat
                 .checkSelfPermission(getActivity(), LOCATION_PERMISSIONS[0]);
@@ -240,7 +271,7 @@ public class LocatrFragment extends SupportMapFragment {
             /*
             case R.id.action_locate:
                 if (hasLocationPermission()) {
-                    findImage();
+                    findCurrentLocation();
                 } else {
                     requestPermissions(LOCATION_PERMISSIONS,
                             REQUEST_LOCATION_PERMISSIONS);
@@ -271,7 +302,7 @@ public class LocatrFragment extends SupportMapFragment {
         switch (requestCode) {
             case REQUEST_LOCATION_PERMISSIONS:
                 if (hasLocationPermission()) {
-                    findImage();
+                    findCurrentLocation();
                 }
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -283,7 +314,7 @@ public class LocatrFragment extends SupportMapFragment {
      * was used in the lab for finding image, I kept it for simplicity on locating location
      */
 
-    private void findImage() {
+    private void findCurrentLocation() {
         LocationRequest request = LocationRequest.create();
         request.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         request.setNumUpdates(1);
@@ -306,101 +337,17 @@ public class LocatrFragment extends SupportMapFragment {
         }
     }
 
+    /**
+     * Function to change map view based on a passed in location
+     *
+     * @param location - Location that we would like to switch to
+     */
     private void moveMap(Location location) {
         Log.i(TAG, "Unable to decode bitmap wat");
         LatLng coordinate = new LatLng(location.getLatitude(), location.getLongitude());
         CameraUpdate yourLocation = CameraUpdateFactory.newLatLngZoom(coordinate, 15);
         mMap.animateCamera(yourLocation);
     }
-    /*
-    private class SearchTask extends AsyncTask<Location,Void,Void> {
-
-        private Location mLocation;
-
-        JSONObject data = null;
-        String name;
-        Double lat;
-        Double lng;
-        String address;
-        String city;
-        String state;
-        Integer zip;
-        String foodtype;
-
-        @Override
-        protected Void doInBackground(Location... params) {
-            try {
-                mLocation = params[0];
-
-                URL url = new URL("http://api.openweathermap.org/data/2.5/weather?lat=" + mLocation.getLatitude() + "&lon=" + mLocation.getLongitude() + "&APPID=fe71689b89d124ad6fd92c6def8f48ac");
-
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-                BufferedReader reader =
-                        new BufferedReader(new InputStreamReader(connection.getInputStream()));
-
-                StringBuffer json = new StringBuffer(1024);
-                String tmp = "";
-
-
-                while ((tmp = reader.readLine()) != null)
-                    json.append(tmp).append("\n");
-                reader.close();
-
-                data = new JSONObject(json.toString());
-
-                if (data.getInt("cod") != 200) {
-                    System.out.println("Cancelled");
-                    return null;
-                }
-
-                JSONObject main = data.getJSONObject("main");
-                temperature = main.getString("temp");
-
-                JSONArray main1 = data.getJSONArray("weather");
-                JSONObject hi = main1.getJSONObject(0);
-                desc = hi.getString("description");
-
-
-                Stand stand = new Stand();
-                stand.setName(name);
-                stand.setLat(lat);
-                stand.setLng(lng);
-                stand.setFoodtype(foodtype);
-                stand.setAddress(address);
-                stand.setCity(city);
-                stand.setState(state);
-                stand.setZip(zip);
-
-            } catch (Exception e) {
-
-                System.out.println("Exception " + e.getMessage());
-                return null;
-            }
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            if (data != null) {
-                Log.d("my weather received", data.toString());
-            }
-
-            Log.i(TAG, "my weather received" + desc);
-            Log.i(TAG, "my weather received" + temperature);
-            mCurrentLocation = mLocation;
-
-            double amount = Double.parseDouble(temperature);
-            amount = (amount * 9 / 5) - 459.67;
-
-            Log.i(TAG, "my weather received" + amount);
-            updateUI();
-
-        }
-    }
-
-*/
 
      /**
      *
@@ -420,5 +367,49 @@ public class LocatrFragment extends SupportMapFragment {
         super.onStop();
 
         mClient.disconnect();
+    }
+
+    /**
+     * Handles getting the correct stands within a Lat, Long, and Radius
+     *
+     */
+    private class StandHandler extends AsyncTask <Void, Void, JSONObject> {
+        @Override
+        protected JSONObject doInBackground(Void... params){
+            Log.i(TAG, latitude + " " + longitude);
+            return new NetworkHandler().getStandsByLLR(Double.toString(latitude),Double.toString(longitude),Integer.toString(3));
+        }
+
+        @Override
+        protected void onPostExecute(JSONObject results){
+
+            try {
+
+                mStandsNames = new ArrayList<>();
+                JSONArray standsArray = results.getJSONArray("stand");
+
+                for (int i = 0; i < standsArray.length(); i++) {
+                    JSONObject stand = standsArray.getJSONObject(i);
+
+                    Stand s = new Stand(stand.getInt("standID"),
+                            stand.getString("name"),
+                            stand.getDouble("lat"),
+                            stand.getDouble("lng"),
+                            stand.getString("address"),
+                            stand.getString("city"),
+                            stand.getString("state"),
+                            Integer.parseInt(stand.getString("zipcode")),
+                            stand.getString("foodtype"));
+                    mStandsNames.add(stand.getString("name"));
+                    stands.add(s);
+
+                }
+
+                updateUI();
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

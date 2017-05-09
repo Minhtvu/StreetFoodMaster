@@ -151,12 +151,12 @@ public class NetworkHandler {
         return results;
     }
 
-    public String getStandsByLLR(String lat, String lng, String radius){
-        String results = getJson(ENDPOINT
+    public JSONObject getStandsByLLR(String lat, String lng, String radius){
+        JSONObject results = getJson(ENDPOINT
                 +"/stands"
                 +"/"+lat
                 +"/"+lng
-                +"/"+radius, "GET", null, null).toString();
+                +"/"+radius, "GET", null, null);
 //        Log.i(TAG, results);
         return results;
     }
