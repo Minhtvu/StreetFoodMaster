@@ -38,7 +38,7 @@ public class AddStandActivity extends AppCompatActivity {
 //    };
 
     private Location mLocation;
-    private static GoogleApiClient mClient;
+    private GoogleApiClient mClient;
     private static final String TAG = "AddStand";
 
 
@@ -186,7 +186,24 @@ public class AddStandActivity extends AppCompatActivity {
         }
     }
 
-    private class LookupHandler extends AsyncTask<Void, Void, JSONObject> {
+    /**
+     *
+     * Starts and Stops client connection with google maps
+     *
+     */
+    @Override
+    public void onStart() {
+        super.onStart();
+        mClient.connect();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mClient.disconnect();
+    }
+
+    private class PostHandler extends AsyncTask<Void, Void, JSONObject> {
         @Override
         protected JSONObject doInBackground(Void... params){
             return new NetworkHandler().postStand(mName,mFoodType,mLat,mLng,mAddress,mCity,mState,mZipcode,mAuthToken);
