@@ -64,8 +64,9 @@ public class LocatrFragment extends SupportMapFragment {
     private double longitude;
     private String food;
     private ArrayList<Stand> stands = new ArrayList<Stand>();
+    private Location mLocation;
 
-    
+
     private static final String[] LOCATION_PERMISSIONS = new String[]{
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -112,6 +113,21 @@ public class LocatrFragment extends SupportMapFragment {
             }
 
         });
+
+        FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab1);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (hasLocationPermission()) {
+                    findImage();
+                } else {
+                    requestPermissions(LOCATION_PERMISSIONS,
+                            REQUEST_LOCATION_PERMISSIONS);
+                }
+            }
+        });
+
+
         searchInDatabase();
         updateUI();
     }
@@ -202,31 +218,6 @@ public class LocatrFragment extends SupportMapFragment {
 
     }
 
-    /**
-     *
-     * was used in the lab for finding image, I kept it for simplicity on locating location
-     */
-    private void findImage() {
-        LocationRequest request = LocationRequest.create();
-        request.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        request.setNumUpdates(1);
-        request.setInterval(0);
-
-
-        try {
-            LocationServices.FusedLocationApi
-                    .requestLocationUpdates(mClient, request, new LocationListener() {
-                        @Override
-                        public void onLocationChanged(Location location) {
-                            Log.i(TAG, "Got a fix: " + location);
-                            new SearchTask().execute(location);
-                        }
-                    });
-        } catch(SecurityException e) {
-            Log.i(TAG, "Unable to decode bitmap wat");
-            return;
-        }
-    }
 
     private boolean hasLocationPermission() {
         int result = ContextCompat
@@ -287,9 +278,40 @@ public class LocatrFragment extends SupportMapFragment {
         }
 
     }
+    /**
+     *
+     * was used in the lab for finding image, I kept it for simplicity on locating location
+     */
+
+    private void findImage() {
+        LocationRequest request = LocationRequest.create();
+        request.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        request.setNumUpdates(1);
+        request.setInterval(0);
 
 
+        try {
+            LocationServices.FusedLocationApi
+                    .requestLocationUpdates(mClient, request, new LocationListener() {
+                        @Override
+                        public void onLocationChanged(Location location) {
+                            Log.i(TAG, "Got a fix: " + location);
+                            mLocation = location;
+                            moveMap(location);
+                        }
+                    });
+        } catch(SecurityException e) {
+            Log.i(TAG, "Unable to decode bitmap wat");
+            return;
+        }
+    }
 
+    private void moveMap(Location location) {
+        Log.i(TAG, "Unable to decode bitmap wat");
+        LatLng coordinate = new LatLng(location.getLatitude(), location.getLongitude());
+        CameraUpdate yourLocation = CameraUpdateFactory.newLatLngZoom(coordinate, 15);
+        mMap.animateCamera(yourLocation);
+    }
     /*
     private class SearchTask extends AsyncTask<Location,Void,Void> {
 
