@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView mAuthTokenText;
     PlaceAutocompleteFragment autocompleteFragment;
 
+    /**
+     *
+     */
     protected void checkLoggedIn(){
         findViewById(R.id.signin_button).setVisibility(View.GONE);
         findViewById(R.id.register_button).setVisibility(View.GONE);
@@ -52,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
             findViewById(R.id.manage_button).setVisibility(View.VISIBLE);
         }
     }
+
+    /**
+     *
+     * @param savedInstanceState
+     */
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
