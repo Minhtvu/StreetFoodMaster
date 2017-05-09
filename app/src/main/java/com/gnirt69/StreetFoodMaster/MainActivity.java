@@ -109,13 +109,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        surpriseButton = (Button) findViewById(R.id.surprise_button);
-        surpriseButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), SurpriseActivity.class);
-                startActivity(intent);
-            }
-        });
+//        surpriseButton = (Button) findViewById(R.id.surprise_button);
+//        surpriseButton.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                Intent intent = new Intent(v.getContext(), SurpriseActivity.class);
+//                startActivity(intent);
+//            }
+//        });
         signUpButton = (Button) findViewById(R.id.register_button);
         signUpButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

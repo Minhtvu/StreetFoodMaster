@@ -166,7 +166,8 @@ public class StandActivity extends AppCompatActivity implements AdapterView.OnIt
             }
         });
 
-        if(mAuthToken != null){
+        if(mAuthToken == null){
+            new LookupHandler().execute();
             mStandName.setFocusable(false);
             mStandName.setClickable(false);
             mStandLat.setFocusable(false);
@@ -181,6 +182,8 @@ public class StandActivity extends AppCompatActivity implements AdapterView.OnIt
             mStandState.setClickable(false);
             mStandZipcode.setFocusable(false);
             mStandZipcode.setClickable(false);
+            mStandFoodtype.setFocusable(false);
+            mStandFoodtype.setClickable(false);
             mStandLatLng.setVisibility(View.GONE);
             mStandDelete.setVisibility(View.GONE);
             mStandPost.setVisibility(View.GONE);
@@ -188,6 +191,7 @@ public class StandActivity extends AppCompatActivity implements AdapterView.OnIt
         } else if(mUpdate) {
             mStandPost.setVisibility(View.GONE);
             mStandLatLng.setText("Update Location");
+            new LookupHandler().execute();
         } else {
             mStandUpdate.setVisibility(View.GONE);
             mStandDelete.setVisibility(View.GONE);
@@ -317,6 +321,43 @@ public class StandActivity extends AppCompatActivity implements AdapterView.OnIt
         @Override
         protected void onPostExecute(JSONObject results){
             finish();
+        }
+    }
+
+    private class LookupHandler extends AsyncTask<Void, Void, JSONObject> {
+        @Override
+        protected JSONObject doInBackground(Void... params){
+            return new NetworkHandler().getStand(mStandID);
+        }
+
+        @Override
+        protected void onPostExecute(JSONObject results){
+            try {
+                JSONObject stand =results.getJSONObject("stand");
+
+                mName = stand.getString("name");
+                mLat = stand.getDouble("lat");
+                mLng = stand.getDouble("lng");
+                mAddress = stand.getString("address");
+                mCity = stand.getString("city");
+                mState = stand.getString("state");
+                mZipcode = Integer.parseInt(stand.getString("zipcode"));
+                mFoodType = stand.getString("foodtype");
+                mStandName.setText(mName);
+                mStandLat.setText(Double.toString(mLat));
+                mStandLng.setText(Double.toString(mLng));
+                mStandAddress.setText(mAddress);
+                mStandCity.setText(mCity);
+                mStandState.setText(mState);
+                mStandZipcode.setText(Integer.toString(mZipcode));
+                mStandFoodtype.setSelection(Arrays.asList(getResources().getStringArray(R.array.array_food)).indexOf(mFoodType));
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
+
         }
     }
 }

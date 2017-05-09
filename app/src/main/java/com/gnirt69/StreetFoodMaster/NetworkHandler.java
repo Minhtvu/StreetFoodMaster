@@ -110,6 +110,10 @@ public class NetworkHandler {
         return results;
     }
 
+    public JSONObject getStand(int standID){
+        return getJson(ENDPOINT+"/stands/"+Integer.toString(standID),"GET",null,null);
+    }
+
     public JSONObject postRegister(String username,
                                String password,
                                String first,
