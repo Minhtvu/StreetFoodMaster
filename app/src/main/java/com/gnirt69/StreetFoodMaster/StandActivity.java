@@ -141,6 +141,7 @@ public class StandActivity extends AppCompatActivity implements AdapterView.OnIt
                 mCity = mStandCity.getText().toString();
                 mState = mStandState.getText().toString();
                 mZipcode = Integer.parseInt(mStandZipcode.getText().toString());
+                Log.i(TAG,mName);
                 new UpdateHandler().execute();
             }
         });
@@ -351,13 +352,11 @@ public class StandActivity extends AppCompatActivity implements AdapterView.OnIt
                 mStandState.setText(mState);
                 mStandZipcode.setText(Integer.toString(mZipcode));
                 mStandFoodtype.setSelection(Arrays.asList(getResources().getStringArray(R.array.array_food)).indexOf(mFoodType));
-
+                Log.i(TAG,mName);
+                setTitle(mName);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
-
-
         }
     }
 }

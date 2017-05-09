@@ -44,6 +44,7 @@ public class NetworkHandler {
                 case "GET":
                     break;
                 case "POST":
+                case "PUT":
                     OutputStream os = connection.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
                             new OutputStreamWriter(os, "UTF-8"));
