@@ -1,5 +1,6 @@
 package com.gnirt69.StreetFoodMaster;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
@@ -20,22 +22,46 @@ import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "Place";
+    private static final int SIGNINREQUESTCODE = 100;
+    private static final int SIGNUPREQUESTCODE = 101;
+    private static final String KEY_AUTH = "authToken";
+    private static final String KEY_USER = "userID";
+
+    private String authToken = "NULL";
+    private int userID = -1;
+
     private Button signInButton;
     private Button advanceButton;
     private Button searchButton;
     private Button surpriseButton;
     private Button signUpButton;
+    private Button mManageButton;
     private Place currentPlace;
+    private TextView mUserIDText;
+    private TextView mAuthTokenText;
     PlaceAutocompleteFragment autocompleteFragment;
+
+    protected void checkLoggedIn(){
+        findViewById(R.id.signin_button).setVisibility(View.GONE);
+        findViewById(R.id.register_button).setVisibility(View.GONE);
+        findViewById(R.id.manage_button).setVisibility(View.GONE);
+        if(userID == -1){
+            findViewById(R.id.signin_button).setVisibility(View.VISIBLE);
+            findViewById(R.id.register_button).setVisibility(View.VISIBLE);
+        } else {
+            findViewById(R.id.manage_button).setVisibility(View.VISIBLE);
+        }
+    }
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+        checkLoggedIn();
         signInButton = (Button) findViewById(R.id.signin_button);
         signInButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), SignInActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, SIGNINREQUESTCODE);
             }
         });
         advanceButton = (Button) findViewById(R.id.advance_button);
@@ -85,12 +111,63 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        signUpButton = (Button) findViewById(R.id.new_business);
+        signUpButton = (Button) findViewById(R.id.register_button);
         signUpButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), RegisterActivity.class);
+                startActivityForResult(intent, SIGNUPREQUESTCODE);
+            }
+        });
+
+//        mUserIDText = (TextView) findViewById(R.id.user_id_text);
+//        mUserIDText.setText(Integer.toString(userID));
+//        mAuthTokenText = (TextView) findViewById(R.id.authToken_text);
+//        mAuthTokenText.setText(authToken);
+
+        mManageButton = (Button) findViewById(R.id.manage_button);
+        mManageButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ManageActivity.class);
+                intent.putExtra("authToken", authToken);
+                intent.putExtra("userID", userID);
+                Log.i(TAG,Integer.toString(userID)+" "+authToken);
                 startActivity(intent);
             }
         });
+
+    }
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        Log.i(TAG, "onSaveInstanceState");
+        savedInstanceState.putString(KEY_AUTH, authToken);
+        savedInstanceState.putInt(KEY_USER, userID);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch(requestCode) {
+            case (SIGNINREQUESTCODE) : {
+                if (resultCode == Activity.RESULT_OK) {
+                    authToken = data.getStringExtra("authToken");
+                    userID = data.getIntExtra("userID", -1);
+                    //mUserIDText.setText(Integer.toString(userID));
+                    //mAuthTokenText.setText(authToken);
+                    checkLoggedIn();
+                }
+                break;
+            }
+            case (SIGNUPREQUESTCODE): {
+                if (resultCode == Activity.RESULT_OK) {
+                    authToken = data.getStringExtra("authToken");
+                    userID = data.getIntExtra("userID", -1);
+                    //mUserIDText.setText(Integer.toString(userID));
+                    //mAuthTokenText.setText(authToken);
+                    checkLoggedIn();
+                }
+                break;
+            }
+        }
     }
 }

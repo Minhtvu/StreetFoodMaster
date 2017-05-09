@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class Stand {
 
-    private UUID mId;
+    private int mId;
     private String mName;
     private Double mLat;
     private Double mLng;
@@ -19,11 +19,24 @@ public class Stand {
     private Integer mZip;
     private String mFoodtype;
 
-    public Stand() { this(UUID.randomUUID()); }
+    public Stand() {mId = -1; }
 
-    public Stand(UUID id) {
+    public Stand(int id) {
 
         mId = id;
+    }
+
+    public Stand(int id, String name, double lat, double lng, String address, String city,
+                 String state, int zip, String foodType){
+        mId = id;
+        mName = name;
+        mLat = lat;
+        mLng = lng;
+        mAddress = address;
+        mCity = city;
+        mState = state;
+        mZip = zip;
+        mFoodtype = foodType;
     }
 
     public String getAddress() {
@@ -50,7 +63,7 @@ public class Stand {
         mLng = lng;
     }
 
-    public UUID getId() {
+    public int getId() {
         return mId;
     }
 

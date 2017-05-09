@@ -1,5 +1,7 @@
 package com.gnirt69.StreetFoodMaster;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,20 +10,17 @@ import android.widget.EditText;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by minhtvu on 3/3/17.
  */
 
 public class RegisterActivity extends AppCompatActivity {
-    private Button pictureButton;
-    private Button menuButton;
+    private int mUserID;
+    private String mAuthToken;
     private Button submitButton;
-    private EditText firstName;
-    private EditText lastName;
-    private EditText email;
-    private EditText phoneNumber;
-    private EditText password;
-    private EditText passwordConfirm;
     private String mFirstname;
     private String mLastname;
     private String mEmail;
@@ -60,23 +59,39 @@ public class RegisterActivity extends AppCompatActivity {
                     toast.show();
                 } else {
                     new LoginHandler().execute();
-                    finish();
+
                 }
             }
         });
     }
 
-    private class LoginHandler extends AsyncTask<Void, Void, String> {
+    private class LoginHandler extends AsyncTask<Void, Void, JSONObject> {
         @Override
-        protected String doInBackground(Void... params){
+        protected JSONObject doInBackground(Void... params){
             return new NetworkHandler().postRegister(mEmail,mPassword,mFirstname,
                     mLastname,mEmail,mPhoneNumber);
         }
 
         @Override
-        protected void onPostExecute(String results){
-            Toast toast = Toast.makeText(getApplicationContext(), results, Toast.LENGTH_LONG);
-            toast.show();
+        protected void onPostExecute(JSONObject results){
+            try {
+                // Assume null response is a 500 err associated with duplicates
+                if(results == null){
+                    Toast toast = Toast.makeText(getApplicationContext(), "Email is already registered!.", Toast.LENGTH_SHORT);
+                    toast.show();
+                } else {
+                    mAuthToken = results.getString("token");
+//                Log.i(TAG, mAuthToken);
+                    mUserID = results.getInt("userID");
+                    Intent resultIntent = new Intent();
+                    resultIntent.putExtra("authToken", mAuthToken);
+                    resultIntent.putExtra("userID", mUserID);
+                    setResult(Activity.RESULT_OK, resultIntent);
+                    finish();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
     }
 

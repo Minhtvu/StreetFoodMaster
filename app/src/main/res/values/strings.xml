@@ -54,4 +54,11 @@
         <item>Pork</item>
         <item>Fish</item>
     </string-array>
+    <string name="title_activity_login">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="title_activity_manage">Manage Your Stands</string>
+    <string name="action_settings">Settings</string>
 </resources>

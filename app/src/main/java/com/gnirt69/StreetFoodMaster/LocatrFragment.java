@@ -348,7 +348,7 @@ public class LocatrFragment extends SupportMapFragment {
 
             MarkerOptions current = new MarkerOptions().position(new LatLng(s.getLat(), s.getLng()))
                     .title("lat/lng"+s.getLat()+"   "+s.getLng())
-                    .snippet(s.getId().toString());
+                    .snippet(Integer.toString(s.getId()));
 
             mMap.addMarker(current);
             mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
