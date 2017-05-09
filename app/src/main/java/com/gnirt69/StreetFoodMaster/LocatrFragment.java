@@ -144,6 +144,8 @@ public class LocatrFragment extends SupportMapFragment {
 
         new StandHandler().execute();
 
+        //actually do the stuff below
+
         if (food !=  null )
         {
             //query by Foodtype && current location (lat,long)
@@ -369,7 +371,7 @@ public class LocatrFragment extends SupportMapFragment {
         @Override
         protected JSONObject doInBackground(Void... params){
             Log.i(TAG, latitude + " " + longitude);
-            return new NetworkHandler().getStandsByLLR(Double.toString(latitude),Double.toString(longitude),Integer.toString(3));
+            return new NetworkHandler().getStandsByLLR(Double.toString(latitude),Double.toString(longitude),Integer.toString(20));
         }
 
         @Override
