@@ -32,7 +32,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class AddStandActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class StandActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 //    private static final String[] LOCATION_PERMISSIONS = new String[]{
 //            Manifest.permission.ACCESS_FINE_LOCATION,
 //            Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -57,25 +57,33 @@ public class AddStandActivity extends AppCompatActivity implements AdapterView.O
     private double mLat;
     private double mLng;
     private int mZipcode;
+    private boolean mUpdate;
+    private int mStandID;
 
-    private EditText mNewStandName;
-    private EditText mNewStandLat;
-    private EditText mNewStandLng;
-    private EditText mNewStandAddress;
-    private EditText mNewStandCity;
-    private EditText mNewStandState;
-    private EditText mNewStandZipcode;
-    private Spinner mNewStandFoodtype;
-    private Button mNewStandLatLng;
-    private Button mNewStandPost;
+    private EditText mStandName;
+    private EditText mStandLat;
+    private EditText mStandLng;
+    private EditText mStandAddress;
+    private EditText mStandCity;
+    private EditText mStandState;
+    private EditText mStandZipcode;
+    private Spinner mStandFoodtype;
+    private Button mStandLatLng;
+    private Button mStandPost;
+    private Button mStandUpdate;
+    private Button mStandDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_stand_activity);
 
+        setTitle("Create a New Stand");
+
         Bundle extras = getIntent().getExtras();
         mAuthToken = extras.getString("authToken");
+        mUpdate = extras.getBoolean("update");
+        mStandID = extras.getInt("standID");
 
         mClient = new GoogleApiClient.Builder(this).addApi(LocationServices.API)
                 .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
@@ -90,26 +98,27 @@ public class AddStandActivity extends AppCompatActivity implements AdapterView.O
                 })
                 .build();
 
-        mNewStandName = (EditText) findViewById(R.id.new_stand_name);
-        mNewStandLat = (EditText) findViewById(R.id.new_stand_lat);
-        mNewStandLng = (EditText) findViewById(R.id.new_stand_lng);
-        mNewStandAddress = (EditText) findViewById(R.id.new_stand_address);
-        mNewStandCity = (EditText) findViewById(R.id.new_stand_city);
-        mNewStandState = (EditText) findViewById(R.id.new_stand_state);
-        mNewStandZipcode = (EditText) findViewById(R.id.new_stand_zipcode);
+        mStandName = (EditText) findViewById(R.id.stand_name);
+        mStandLat = (EditText) findViewById(R.id.stand_lat);
+        mStandLng = (EditText) findViewById(R.id.stand_lng);
+        mStandAddress = (EditText) findViewById(R.id.stand_address);
+        mStandCity = (EditText) findViewById(R.id.stand_city);
+        mStandState = (EditText) findViewById(R.id.stand_state);
+        mStandZipcode = (EditText) findViewById(R.id.stand_zipcode);
 
-        mNewStandFoodtype = (Spinner) findViewById(R.id.new_stand_foodtype);
-        mNewStandFoodtype.setOnItemSelectedListener(this);
+        mStandFoodtype = (Spinner) findViewById(R.id.stand_foodtype);
+        mStandFoodtype.setOnItemSelectedListener(this);
+
         final ArrayList<String> arrayFood= new ArrayList<>();
         arrayFood.addAll(Arrays.asList(getResources().getStringArray(R.array.array_food)));
 
         ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,arrayFood);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        mNewStandFoodtype.setAdapter(aa);
+        mStandFoodtype.setAdapter(aa);
 
-        mNewStandLatLng = (Button) findViewById(R.id.new_stand_LatLng_Button);
-        mNewStandLatLng.setOnClickListener(new View.OnClickListener() {
+        mStandLatLng = (Button) findViewById(R.id.stand_LatLng_Button);
+        mStandLatLng.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (hasLocationPermission()) {
                     findLatLng();
@@ -117,24 +126,72 @@ public class AddStandActivity extends AppCompatActivity implements AdapterView.O
                     requestPermissions(LOCATION_PERMISSIONS,
                             REQUEST_LOCATION_PERMISSIONS);
                 }
-                mNewStandLat.setText(Double.toString(mLat));
-                mNewStandLng.setText(Double.toString(mLng));
+                mStandLat.setText(Double.toString(mLat));
+                mStandLng.setText(Double.toString(mLng));
             }
         });
 
-        mNewStandPost = (Button) findViewById(R.id.new_stand_post_button);
-        mNewStandPost.setOnClickListener(new View.OnClickListener() {
+        mStandUpdate = (Button) findViewById(R.id.stand_update_button);
+        mStandUpdate.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                mName = mStandName.getText().toString();
+                mLat = Double.parseDouble(mStandLat.getText().toString());
+                mLng = Double.parseDouble(mStandLng.getText().toString());
+                mAddress = mStandAddress.getText().toString();
+                mCity = mStandCity.getText().toString();
+                mState = mStandState.getText().toString();
+                mZipcode = Integer.parseInt(mStandZipcode.getText().toString());
+                new UpdateHandler().execute();
+            }
+        });
+
+        mStandPost = (Button) findViewById(R.id.stand_post_button);
+        mStandPost.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
-                mName = mNewStandName.getText().toString();
-                mLat = Double.parseDouble(mNewStandLat.getText().toString());
-                mLng = Double.parseDouble(mNewStandLng.getText().toString());
-                mAddress = mNewStandAddress.getText().toString();
-                mCity = mNewStandCity.getText().toString();
-                mState = mNewStandState.getText().toString();
-                mZipcode = Integer.parseInt(mNewStandZipcode.getText().toString());
+                mName = mStandName.getText().toString();
+                mLat = Double.parseDouble(mStandLat.getText().toString());
+                mLng = Double.parseDouble(mStandLng.getText().toString());
+                mAddress = mStandAddress.getText().toString();
+                mCity = mStandCity.getText().toString();
+                mState = mStandState.getText().toString();
+                mZipcode = Integer.parseInt(mStandZipcode.getText().toString());
                 new PostHandler().execute();
             }
         });
+
+        mStandDelete = (Button) findViewById(R.id.stand_Delete_button);
+        mStandDelete.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                new DeleteHandler().execute();
+            }
+        });
+
+        if(mAuthToken != null){
+            mStandName.setFocusable(false);
+            mStandName.setClickable(false);
+            mStandLat.setFocusable(false);
+            mStandLat.setClickable(false);
+            mStandLng.setFocusable(false);
+            mStandLng.setClickable(false);
+            mStandAddress.setFocusable(false);
+            mStandAddress.setClickable(false);
+            mStandCity.setFocusable(false);
+            mStandCity.setClickable(false);
+            mStandState.setFocusable(false);
+            mStandState.setClickable(false);
+            mStandZipcode.setFocusable(false);
+            mStandZipcode.setClickable(false);
+            mStandLatLng.setVisibility(View.GONE);
+            mStandDelete.setVisibility(View.GONE);
+            mStandPost.setVisibility(View.GONE);
+            mStandUpdate.setVisibility(View.GONE);
+        } else if(mUpdate) {
+            mStandPost.setVisibility(View.GONE);
+            mStandLatLng.setText("Update Location");
+        } else {
+            mStandUpdate.setVisibility(View.GONE);
+            mStandDelete.setVisibility(View.GONE);
+        }
     }
 
     private boolean hasLocationPermission() {
@@ -218,8 +275,8 @@ public class AddStandActivity extends AppCompatActivity implements AdapterView.O
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-        mNewStandFoodtype.setSelection(position);
-        mFoodType = (String) mNewStandFoodtype.getSelectedItem();
+        mStandFoodtype.setSelection(position);
+        mFoodType = (String) mStandFoodtype.getSelectedItem();
     }
 
     @Override
@@ -231,6 +288,30 @@ public class AddStandActivity extends AppCompatActivity implements AdapterView.O
         @Override
         protected JSONObject doInBackground(Void... params){
             return new NetworkHandler().postStand(mName,mFoodType,mLat,mLng,mAddress,mCity,mState,mZipcode,mAuthToken);
+        }
+
+        @Override
+        protected void onPostExecute(JSONObject results){
+            finish();
+        }
+    }
+
+    private class UpdateHandler extends AsyncTask<Void, Void, JSONObject> {
+        @Override
+        protected JSONObject doInBackground(Void... params){
+            return new NetworkHandler().putStand(mStandID,mName,mFoodType,mLat,mLng,mAddress,mCity,mState,mZipcode,mAuthToken);
+        }
+
+        @Override
+        protected void onPostExecute(JSONObject results){
+            finish();
+        }
+    }
+
+    private class DeleteHandler extends AsyncTask<Void, Void, JSONObject> {
+        @Override
+        protected JSONObject doInBackground(Void... params){
+            return new NetworkHandler().deleteStand(mStandID,mAuthToken);
         }
 
         @Override

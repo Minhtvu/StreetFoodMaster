@@ -16,46 +16,46 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
         <EditText
-            android:id="@+id/new_stand_name"
+            android:id="@+id/stand_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="12"
             android:background="@android:drawable/editbox_background"
             android:hint="Name"/>
         <Spinner
-            android:id="@+id/new_stand_foodtype"
+            android:id="@+id/stand_foodtype"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="12"
             />
         <EditText
-            android:id="@+id/new_stand_lat"
+            android:id="@+id/stand_lat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="12"
             android:background="@android:drawable/editbox_background"
             android:hint="Latitude"/>
         <EditText
-            android:id="@+id/new_stand_lng"
+            android:id="@+id/stand_lng"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="12"
             android:background="@android:drawable/editbox_background"
             android:hint="Longitude"/>
         <Button
-            android:id="@+id/new_stand_LatLng_Button"
+            android:id="@+id/stand_LatLng_Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Get Location"/>
         <EditText
-            android:id="@+id/new_stand_address"
+            android:id="@+id/stand_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="12"
             android:background="@android:drawable/editbox_background"
             android:hint="Street Address"/>
         <EditText
-            android:id="@+id/new_stand_city"
+            android:id="@+id/stand_city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="12"
@@ -66,14 +66,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <EditText
-                android:id="@+id/new_stand_state"
+                android:id="@+id/stand_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="6"
                 android:background="@android:drawable/editbox_background"
                 android:hint="State"/>
             <EditText
-                android:id="@+id/new_stand_zipcode"
+                android:id="@+id/stand_zipcode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="6"
@@ -83,9 +83,24 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/new_stand_post_button"
+        android:id="@+id/stand_post_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create Stand"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/stand_update_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"/>
+        <Button
+            android:id="@+id/stand_Delete_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"/>
+        </LinearLayout>
 
 </LinearLayout>

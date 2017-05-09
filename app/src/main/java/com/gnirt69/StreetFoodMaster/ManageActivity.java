@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,7 +17,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class ManageActivity extends AppCompatActivity {
     private int mUserID;
@@ -40,9 +38,10 @@ public class ManageActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(view.getContext(), StandInfoActivity.class);
-                intent.putExtra("stand", mOwnedStands.get(position).getId());
+                Intent intent = new Intent(view.getContext(), StandActivity.class);
+                intent.putExtra("standID", mOwnedStands.get(position).getId());
                 intent.putExtra("authToken", mAuthToken);
+                intent.putExtra("update", true);
                 startActivity(intent);
             }
 
@@ -58,8 +57,10 @@ public class ManageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                Intent intent = new Intent(view.getContext(), AddStandActivity.class);
+                Intent intent = new Intent(view.getContext(), StandActivity.class);
                 intent.putExtra("authToken", mAuthToken);
+                intent.putExtra("update", false);
+                intent.putExtra("standID", -1);
                 startActivity(intent);
                 new LookupHandler().execute();
             }
@@ -73,6 +74,11 @@ public class ManageActivity extends AppCompatActivity {
         super.onResume();
         new LookupHandler().execute();
     }
+
+//    @Override
+//    protected void onSaveInstanceState(){
+//        super.onSaveInstanceState();
+//    }
 
     private class LookupHandler extends AsyncTask<Void, Void, JSONObject> {
         @Override
