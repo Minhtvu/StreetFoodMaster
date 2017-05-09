@@ -1,6 +1,10 @@
 package com.gnirt69.StreetFoodMaster;
 
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.AsyncTask;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +23,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class AddStandActivity extends AppCompatActivity {
+//    private static final String[] LOCATION_PERMISSIONS = new String[]{
+//            Manifest.permission.ACCESS_FINE_LOCATION,
+//            Manifest.permission.ACCESS_COARSE_LOCATION,
+//    };
     private String mName;
     private String mFoodType;
     private String mAddress;
@@ -65,6 +73,12 @@ public class AddStandActivity extends AppCompatActivity {
         mNewStandLatLng.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+//                if(ContextCompat.checkSelfPermission(getActivity(), LOCATION_PERMISSIONS[0])) {
+//                    LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//                    Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+//                    double longitude = location.getLongitude();
+//                    double latitude = location.getLatitude();
+//                }
             }
         });
 
