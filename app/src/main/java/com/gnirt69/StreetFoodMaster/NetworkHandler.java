@@ -187,7 +187,7 @@ public class NetworkHandler {
                 +"/stands"
                 +"/"+lat
                 +"/"+lng
-                +"/"+radius, "GET", null, null).toString();
+                +"/"+radius, "GET", null, null);
 //        Log.i(TAG, results);
         return results;
     }

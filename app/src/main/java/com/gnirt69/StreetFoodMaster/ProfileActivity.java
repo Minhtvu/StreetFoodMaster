@@ -2,6 +2,7 @@ package com.gnirt69.StreetFoodMaster;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -13,6 +14,8 @@ import java.util.UUID;
  */
 
 public class ProfileActivity extends AppCompatActivity {
+
+    private static final String TAG = "ProfileActivity";
     private Button menuButton;
     private Button faveButton;
     private String mName;
@@ -25,6 +28,8 @@ public class ProfileActivity extends AppCompatActivity {
     private String mFoodtype;
     protected void onCreate(Bundle savedInstanceState)
     {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_activity);
         mName = getIntent().getStringExtra("NAME");
@@ -35,6 +40,8 @@ public class ProfileActivity extends AppCompatActivity {
         mState = getIntent().getStringExtra("STATE");
         mZip = getIntent().getIntExtra("ZIP",0);
         mFoodtype = getIntent().getStringExtra("FOODTYPE");
+
+        Log.i(TAG, mName + " " + mLat + " " + mLng + " " + mAddress + " " + mCity + " " + mState + " " + mZip);
 
         menuButton = (Button) findViewById(R.id.menu_button);
         menuButton.setOnClickListener(new View.OnClickListener() {

@@ -17,6 +17,9 @@ import org.json.JSONObject;
 
 /**
  * Created by minhtvu on 3/3/17.
+ *
+ * Refactored by Robert on 5/6/17
+ *
  */
 
 public class SignInActivity extends AppCompatActivity {
@@ -42,8 +45,6 @@ public class SignInActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(getApplicationContext(), "Please enter your email and password", Toast.LENGTH_SHORT);
                     toast.show();
                 } else {
-//                    Toast toast = Toast.makeText(getApplicationContext(), "Logging in ...", Toast.LENGTH_LONG);
-//                    toast.show();
                     new LoginHandler().execute();
                 }
             }
@@ -56,12 +57,7 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
     }
-    /*
-    @Override
-    protected void onStart() {
-        super.onStart();
-        setContentView(R.layout.signin_activity);
-    }*/
+
     private class LoginHandler extends AsyncTask <Void, Void, JSONObject> {
         @Override
         protected JSONObject doInBackground(Void... params){

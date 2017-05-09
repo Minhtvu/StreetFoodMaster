@@ -3,12 +3,10 @@ package com.gnirt69.StreetFoodMaster;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
@@ -37,12 +35,10 @@ public class MainActivity extends AppCompatActivity {
     private Button signUpButton;
     private Button mManageButton;
     private Place currentPlace;
-    private TextView mUserIDText;
-    private TextView mAuthTokenText;
     PlaceAutocompleteFragment autocompleteFragment;
 
     /**
-     *
+     * Checks for login credentials and hides buttons accordingly
      */
     protected void checkLoggedIn(){
         findViewById(R.id.signin_button).setVisibility(View.GONE);
@@ -57,8 +53,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Create function, inflates buttons and sets proper onclick listeners
      *
-     * @param savedInstanceState
+     * @param savedInstanceState - saved state of app
      */
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -127,11 +124,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        mUserIDText = (TextView) findViewById(R.id.user_id_text);
-//        mUserIDText.setText(Integer.toString(userID));
-//        mAuthTokenText = (TextView) findViewById(R.id.authToken_text);
-//        mAuthTokenText.setText(authToken);
-
         mManageButton = (Button) findViewById(R.id.manage_button);
         mManageButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -144,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
@@ -152,6 +145,13 @@ public class MainActivity extends AppCompatActivity {
         savedInstanceState.putInt(KEY_USER, userID);
     }
 
+    /**
+     * Returns information from the activities called
+     *
+     * @param requestCode - What was sent in
+     * @param resultCode - What was returned
+     * @param data - data to parse for information from activity
+     */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -160,8 +160,6 @@ public class MainActivity extends AppCompatActivity {
                 if (resultCode == Activity.RESULT_OK) {
                     authToken = data.getStringExtra("authToken");
                     userID = data.getIntExtra("userID", -1);
-                    //mUserIDText.setText(Integer.toString(userID));
-                    //mAuthTokenText.setText(authToken);
                     checkLoggedIn();
                 }
                 break;
@@ -170,8 +168,6 @@ public class MainActivity extends AppCompatActivity {
                 if (resultCode == Activity.RESULT_OK) {
                     authToken = data.getStringExtra("authToken");
                     userID = data.getIntExtra("userID", -1);
-                    //mUserIDText.setText(Integer.toString(userID));
-                    //mAuthTokenText.setText(authToken);
                     checkLoggedIn();
                 }
                 break;

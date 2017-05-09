@@ -34,13 +34,14 @@ import com.google.android.gms.maps.GoogleMap;
 
 /**
  * Created by minhtvu on 3/3/17.
+ *
+ * Options menu for dealing with how you would like to search for stands on the map
  */
 
 public class OptionActivity extends Activity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener{
     private Button currentButton;
     private Button streetButton;
     private Button foodButton;
-    private Button signInButton;
     private GoogleApiClient mClient;
     private static final int REQUEST_ERROR = 0;
     private double latPoint;
@@ -122,14 +123,11 @@ public class OptionActivity extends Activity implements GoogleApiClient.Connecti
 
             }
         });
-        signInButton = (Button) findViewById(R.id.signin_button);
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), SignInActivity.class);
-                startActivity(intent);
-            }
-        });
     }
+
+    /**
+     * check permissions
+     */
     private void showLocationPermission() {
         int permissionCheck = ContextCompat.checkSelfPermission(
                 this, Manifest.permission.ACCESS_FINE_LOCATION);
@@ -139,6 +137,14 @@ public class OptionActivity extends Activity implements GoogleApiClient.Connecti
             Toast.makeText(this, "Permission (already) Granted!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    /**
+     * resulting request for permissions
+     *
+     * @param requestCode - request code for permission
+     * @param permissions - what permissions are wanted
+     * @param grantResults - boolean on if you are granted the permissions by the user
+     */
     @Override
     public void onRequestPermissionsResult(
             int requestCode,
@@ -154,10 +160,21 @@ public class OptionActivity extends Activity implements GoogleApiClient.Connecti
                 }
         }
     }
+
+    /**
+     * request permissions
+     *
+     * @param permissionName - name
+     * @param permissionRequestCode - code for the specific permission
+     */
     private void requestPermission(String permissionName, int permissionRequestCode) {
         ActivityCompat.requestPermissions(OptionActivity.this,
                 new String[]{permissionName}, permissionRequestCode);
     }
+
+    /**
+     * resume/start/stop/connection methods
+     */
     @Override
     protected void onResume() {
         super.onResume();

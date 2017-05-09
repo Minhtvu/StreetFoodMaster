@@ -6,6 +6,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+/**
+ * Created by Robert on 5/6/17
+ */
+
 public class StandInfoActivity extends AppCompatActivity {
     private EditText mStandName;
     private EditText mStandLat;

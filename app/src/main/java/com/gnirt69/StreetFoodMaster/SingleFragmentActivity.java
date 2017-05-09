@@ -5,6 +5,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
+/**
+ * Single Fragment Activity Class from the labs and assignments we used in class
+ *
+ * Created by Kyle DiSandro on 5/7/17
+ */
 public abstract class SingleFragmentActivity extends AppCompatActivity {
 
     protected abstract Fragment createFragment();
