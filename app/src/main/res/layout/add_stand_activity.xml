@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_title"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context="com.gnirt69.StreetFoodMaster.RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <EditText
+            android:id="@+id/new_stand_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="12"
+            android:background="@android:drawable/editbox_background"
+            android:hint="Name"/>
+        <Spinner
+            android:id="@+id/new_stand_foodtype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="12"
+            />
+        <EditText
+            android:id="@+id/new_stand_lat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="12"
+            android:background="@android:drawable/editbox_background"
+            android:hint="Latitude"/>
+        <EditText
+            android:id="@+id/new_stand_lng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="12"
+            android:background="@android:drawable/editbox_background"
+            android:hint="Longitude"/>
+        <Button
+            android:id="@+id/new_stand_LatLng_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get Location"/>
+        <EditText
+            android:id="@+id/new_stand_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="12"
+            android:background="@android:drawable/editbox_background"
+            android:hint="Street Address"/>
+        <EditText
+            android:id="@+id/new_stand_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="12"
+            android:background="@android:drawable/editbox_background"
+            android:hint="City"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/new_stand_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="6"
+                android:background="@android:drawable/editbox_background"
+                android:hint="State"/>
+            <EditText
+                android:id="@+id/new_stand_zipcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="6"
+                android:background="@android:drawable/editbox_background"
+                android:hint="Zip code"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/new_stand_post_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Stand"/>
+
+</LinearLayout>

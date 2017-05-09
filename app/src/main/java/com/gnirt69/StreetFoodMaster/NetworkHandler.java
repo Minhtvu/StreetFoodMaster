@@ -128,6 +128,29 @@ public class NetworkHandler {
         return results;
     }
 
+    public JSONObject postStand(String name,
+                                String foodType,
+                                double lat,
+                                double lng,
+                                String address,
+                                String city,
+                                String state,
+                                int zipcode,
+                                String authToken){
+        Uri.Builder body = new Uri.Builder()
+                .appendQueryParameter("name", name)
+                .appendQueryParameter("foodtype", foodType)
+                .appendQueryParameter("lat", Double.toString(lat))
+                .appendQueryParameter("long", Double.toString(lng))
+                .appendQueryParameter("address", address)
+                .appendQueryParameter("city", city)
+                .appendQueryParameter("state", state)
+                .appendQueryParameter("zip", Integer.toString(zipcode));
+        JSONObject results = getJson(ENDPOINT+"/stands", "POST", body, authToken);
+//        Log.i(TAG, results.toString());
+        return results;
+    }
+
     public String getStandsByLLR(String lat, String lng, String radius){
         String results = getJson(ENDPOINT
                 +"/stands"

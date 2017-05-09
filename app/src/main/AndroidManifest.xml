@@ -133,6 +133,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.gnirt69.StreetFoodMaster.MainActivity" />
         </activity>
+        <activity android:name=".AddStandActivity"></activity>
     </application>
 
 </manifest>

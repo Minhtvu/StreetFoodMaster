@@ -1,5 +1,6 @@
 package com.gnirt69.StreetFoodMaster;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -43,6 +44,9 @@ public class ManageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                Intent intent = new Intent(view.getContext(), AddStandActivity.class);
+                startActivity(intent);
+                new LookupHandler().execute();
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -59,6 +63,8 @@ public class ManageActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(JSONObject results){
             try {
+                mOwnedStands = new ArrayList<>();
+                mStandsNames = new ArrayList<>();
                 JSONArray standsArray = results.getJSONArray("Stands");
 
                 for (int i = 0; i < standsArray.length(); i++) {
