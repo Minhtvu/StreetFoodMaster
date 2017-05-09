@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -33,6 +34,19 @@ public class ManageActivity extends AppCompatActivity {
         setContentView(R.layout.manage_activity);
         mOwnedStands = new ArrayList<>();
         mStandsNames = new ArrayList<>();
+        mStandsList = (ListView) findViewById(R.id.manage_stands_list);
+
+        mStandsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(view.getContext(), StandInfoActivity.class);
+                intent.putExtra("stand", mOwnedStands.get(position).getId());
+                intent.putExtra("authToken", mAuthToken);
+                startActivity(intent);
+            }
+
+        });
 
         Bundle extras = getIntent().getExtras();
         mUserID = extras.getInt("userID");
@@ -45,12 +59,18 @@ public class ManageActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 Intent intent = new Intent(view.getContext(), AddStandActivity.class);
+                intent.putExtra("authToken", mAuthToken);
                 startActivity(intent);
                 new LookupHandler().execute();
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        new LookupHandler().execute();
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
         new LookupHandler().execute();
     }
 
@@ -85,7 +105,6 @@ public class ManageActivity extends AppCompatActivity {
                             ManageActivity.this,
                             android.R.layout.simple_list_item_1,
                             mStandsNames);
-                    mStandsList = (ListView) findViewById(R.id.manage_stands_list);
                     mStandsList.setAdapter(adapter);
                 }
             } catch (JSONException e) {

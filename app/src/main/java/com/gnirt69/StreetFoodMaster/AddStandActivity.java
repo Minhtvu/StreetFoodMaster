@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,7 +32,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class AddStandActivity extends AppCompatActivity {
+public class AddStandActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 //    private static final String[] LOCATION_PERMISSIONS = new String[]{
 //            Manifest.permission.ACCESS_FINE_LOCATION,
 //            Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -72,6 +73,10 @@ public class AddStandActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_stand_activity);
+
+        Bundle extras = getIntent().getExtras();
+        mAuthToken = extras.getString("authToken");
+
         mClient = new GoogleApiClient.Builder(this).addApi(LocationServices.API)
                 .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
                     @Override
@@ -94,6 +99,7 @@ public class AddStandActivity extends AppCompatActivity {
         mNewStandZipcode = (EditText) findViewById(R.id.new_stand_zipcode);
 
         mNewStandFoodtype = (Spinner) findViewById(R.id.new_stand_foodtype);
+        mNewStandFoodtype.setOnItemSelectedListener(this);
         final ArrayList<String> arrayFood= new ArrayList<>();
         arrayFood.addAll(Arrays.asList(getResources().getStringArray(R.array.array_food)));
 
@@ -106,7 +112,7 @@ public class AddStandActivity extends AppCompatActivity {
         mNewStandLatLng.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (hasLocationPermission()) {
-                    findImage();
+                    findLatLng();
                 } else {
                     requestPermissions(LOCATION_PERMISSIONS,
                             REQUEST_LOCATION_PERMISSIONS);
@@ -119,7 +125,14 @@ public class AddStandActivity extends AppCompatActivity {
         mNewStandPost = (Button) findViewById(R.id.new_stand_post_button);
         mNewStandPost.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
-
+                mName = mNewStandName.getText().toString();
+                mLat = Double.parseDouble(mNewStandLat.getText().toString());
+                mLng = Double.parseDouble(mNewStandLng.getText().toString());
+                mAddress = mNewStandAddress.getText().toString();
+                mCity = mNewStandCity.getText().toString();
+                mState = mNewStandState.getText().toString();
+                mZipcode = Integer.parseInt(mNewStandZipcode.getText().toString());
+                new PostHandler().execute();
             }
         });
     }
@@ -146,7 +159,7 @@ public class AddStandActivity extends AppCompatActivity {
         switch (requestCode) {
             case REQUEST_LOCATION_PERMISSIONS:
                 if (hasLocationPermission()) {
-                    findImage();
+                    findLatLng();
                 }
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -159,7 +172,7 @@ public class AddStandActivity extends AppCompatActivity {
      * was used in the lab for finding image, I kept it for simplicity on locating location
      */
 
-    private void findImage() {
+    private void findLatLng() {
         LocationRequest request = LocationRequest.create();
         request.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         request.setNumUpdates(1);
@@ -203,6 +216,17 @@ public class AddStandActivity extends AppCompatActivity {
         mClient.disconnect();
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+        mNewStandFoodtype.setSelection(position);
+        mFoodType = (String) mNewStandFoodtype.getSelectedItem();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
     private class PostHandler extends AsyncTask<Void, Void, JSONObject> {
         @Override
         protected JSONObject doInBackground(Void... params){
@@ -211,7 +235,7 @@ public class AddStandActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(JSONObject results){
-
+            finish();
         }
     }
 }
