@@ -44,6 +44,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Kyle DiSandro
@@ -64,11 +65,18 @@ public class LocatrFragment extends SupportMapFragment {
     private String food;
     private ArrayList<Stand> stands = new ArrayList<Stand>();
 
-    public static LocatrFragment newInstance(double lat, double log, String foodx) {
+    
+    private static final String[] LOCATION_PERMISSIONS = new String[]{
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+    };
+    private static final int REQUEST_LOCATION_PERMISSIONS = 0;
+
+    public static LocatrFragment newInstance(double lat, double lng, String food) {
         Bundle args = new Bundle();
         args.putDouble( LAT, lat);
-        args.putDouble(LONG, log);
-        args.putString( FOOD, foodx);
+        args.putDouble(LONG, lng);
+        args.putString( FOOD, food);
         LocatrFragment frag = new LocatrFragment();
         frag.setArguments( args );
         return frag;
@@ -161,6 +169,127 @@ public class LocatrFragment extends SupportMapFragment {
         //Should never happen
         return new Stand();
     }
+
+    public void showAllMarkers() {
+
+        mMap.clear();
+
+        for(Stand m : stands) {
+            MarkerOptions current = new MarkerOptions()
+                    .position(new LatLng(m.getLat(), m.getLng()))
+                    .title(m.getName() + " - " + m.getAddress())
+                    .snippet(Integer.toString(m.getId()));
+            mMap.addMarker(current);
+        }
+
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker arg0 ) {
+                Stand chosen = getStand(arg0);
+                Intent i = new Intent(getContext(), ProfileActivity.class);
+                i.putExtra("NAME", chosen.getName());
+                i.putExtra("LAT", chosen.getLat());
+                i.putExtra("LONG", chosen.getLng());
+                i.putExtra("ADDRESS", chosen.getAddress());
+                i.putExtra("CITY", chosen.getCity());
+                i.putExtra("STATE", chosen.getState());
+                i.putExtra("ZIP", chosen.getZip());
+                i.putExtra("FOODTYPE", chosen.getFoodtype());
+                startActivity(i);
+                return false;
+            }
+        });
+
+    }
+
+    /**
+     *
+     * was used in the lab for finding image, I kept it for simplicity on locating location
+     */
+    private void findImage() {
+        LocationRequest request = LocationRequest.create();
+        request.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        request.setNumUpdates(1);
+        request.setInterval(0);
+
+
+        try {
+            LocationServices.FusedLocationApi
+                    .requestLocationUpdates(mClient, request, new LocationListener() {
+                        @Override
+                        public void onLocationChanged(Location location) {
+                            Log.i(TAG, "Got a fix: " + location);
+                            new SearchTask().execute(location);
+                        }
+                    });
+        } catch(SecurityException e) {
+            Log.i(TAG, "Unable to decode bitmap wat");
+            return;
+        }
+    }
+
+    private boolean hasLocationPermission() {
+        int result = ContextCompat
+                .checkSelfPermission(getActivity(), LOCATION_PERMISSIONS[0]);
+        return result == PackageManager.PERMISSION_GRANTED;
+    }
+
+    /**
+     *
+     *
+     * Handles functionality of the items in the top menu
+     *
+     * @param item - the item that the user clicks
+     * @return returns a boolean when clicked
+     */
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            /*
+            case R.id.action_locate:
+                if (hasLocationPermission()) {
+                    findImage();
+                } else {
+                    requestPermissions(LOCATION_PERMISSIONS,
+                            REQUEST_LOCATION_PERMISSIONS);
+                }
+                return true; */
+            case R.id.delete:
+                //MarkerLab.get(getActivity()).clearDB();
+                showAllMarkers();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    /**
+     *
+     *
+     * Permissions requesting
+     *
+     * @param requestCode - code for permissions
+     * @param permissions - what permissions are available
+     * @param grantResults - response if permission granted
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                           int[] grantResults) {
+
+        switch (requestCode) {
+            case REQUEST_LOCATION_PERMISSIONS:
+                if (hasLocationPermission()) {
+                    findImage();
+                }
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+    }
+
+
+
     /*
     private class SearchTask extends AsyncTask<Location,Void,Void> {
 
@@ -249,7 +378,9 @@ public class LocatrFragment extends SupportMapFragment {
         }
     }
 
-        /**
+*/
+
+     /**
      *
      * Starts and Stops client connection with google maps
      *
