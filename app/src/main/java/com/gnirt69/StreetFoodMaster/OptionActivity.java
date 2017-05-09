@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -49,7 +50,6 @@ public class OptionActivity extends Activity implements GoogleApiClient.Connecti
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.option_activity);
-        Intent intent = getIntent();
         mClient = new GoogleApiClient.Builder(this)
                 .addApi(LocationServices.API)
                 .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
@@ -76,40 +76,20 @@ public class OptionActivity extends Activity implements GoogleApiClient.Connecti
                                 public void onLocationChanged(Location location) {
                                     latPoint = location.getLatitude();
                                     lngPoint = location.getLongitude();
+                                    Intent targetActivityIntent = LocatrActivity.newIntent( getApplicationContext(), latPoint,lngPoint,null);
+                                    startActivity(targetActivityIntent);
                                 }
                             });
-                    Intent targetActivityIntent = LocatrActivity.newIntent( getApplicationContext(), latPoint,lngPoint,null);
-                    startActivity(targetActivityIntent);
                 }
                 catch(SecurityException e){
                     Log.i(TAG, "Exception: "+e);
                 }
+
             }
         });
         streetButton = (Button) findViewById(R.id.search_street_button);
         streetButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                /*PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
-                        getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
-
-                autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
-
-
-                    @Override
-                    public void onPlaceSelected(Place place) {
-                        // TODO: Get info about the selected place.
-                        Intent targetActivityIntent = LocatrActivity.newIntent( getApplicationContext(), place.getLatLng().latitude,
-                                place.getLatLng().longitude,null);
-                        startActivity(targetActivityIntent);
-                    }
-
-                    @Override
-                    public void onError(Status status) {
-                        // TODO: Handle the error.
-                        Log.i(TAG, "An error occurred: " + status);
-                    }
-                });*/
-
                 Intent intent = new Intent(v.getContext(), SearchStreetActivity.class);
                 startActivity(intent);
             }
@@ -117,8 +97,29 @@ public class OptionActivity extends Activity implements GoogleApiClient.Connecti
         foodButton = (Button) findViewById(R.id.search_food_button);
         foodButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), SearchFoodActivity.class);
-                startActivity(intent);
+                showLocationPermission();
+                LocationRequest request = LocationRequest.create();
+                request.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+                request.setNumUpdates(1);
+                request.setInterval(0);
+                try {
+                    LocationServices.FusedLocationApi
+                            .requestLocationUpdates(mClient, request, new LocationListener() {
+                                @Override
+                                public void onLocationChanged(Location location) {
+                                    latPoint = location.getLatitude();
+                                    lngPoint = location.getLongitude();
+                                    Intent intent = new Intent(getApplicationContext(), SearchFoodActivity.class);
+                                    intent.putExtra("Lat", latPoint);
+                                    intent.putExtra("Long", lngPoint);
+                                    startActivity(intent);
+                                }
+                            });
+                }
+                catch(SecurityException e){
+                    Log.i(TAG, "Exception: "+e);
+                }
+
             }
         });
         signInButton = (Button) findViewById(R.id.signin_button);
