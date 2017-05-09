@@ -89,16 +89,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.gnirt69.StreetFoodMaster.MainActivity" />
         </activity>
-        <activity
-            android:name=".ProfileActivity"
-            android:label="@string/title_profile_activity"
-            android:parentActivityName=".SearchStreetActivity">
-
-            <!-- The meta-data tag is required if you support API level 15 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.gnirt69.StreetFoodMaster.MainActivity" />
-        </activity>
         <activity android:name=".LocatrActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

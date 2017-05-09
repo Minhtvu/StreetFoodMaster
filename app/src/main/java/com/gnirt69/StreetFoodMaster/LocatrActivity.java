@@ -30,10 +30,10 @@ public class LocatrActivity extends SingleFragmentActivity {
         food = getIntent().getExtras().getString(FOOD);
         return LocatrFragment.newInstance(latitude, longitude, food );
     }
-    public static Intent newIntent(Context packageContext, double lat, double log, String food) {
+    public static Intent newIntent(Context packageContext, double lat, double lng, String food) {
         Intent intent = new Intent(packageContext, LocatrActivity.class);
         intent.putExtra( LAT, lat );
-        intent.putExtra( LONG, log );
+        intent.putExtra( LONG, lng );
         intent.putExtra( FOOD, food );
         return intent;
     }
