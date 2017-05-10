@@ -174,20 +174,27 @@ public class LocatrFragment extends SupportMapFragment {
                     .position(new LatLng(m.getLat(), m.getLng()))
                     .title(m.getName() + " - " + m.getAddress())
                     .snippet(Integer.toString(m.getId()));
-            mMap.addMarker(current);
+            mMap.addMarker(current).showInfoWindow();
         }
+
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker arg0 ) {
-                Log.i(TAG, arg0.getSnippet() + " ");
-                Stand chosen = getStand(arg0);
+                return false;
+            }
+        });
+
+        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+                Log.i(TAG, marker.getSnippet() + " ");
+                Stand chosen = getStand(marker);
                 Intent i = new Intent(getContext(), StandActivity.class);
                 Log.i(TAG, Integer.toString(chosen.getId()));
                 i.putExtra("standID", chosen.getId());
                 i.putExtra("update", false);
                 i.putExtra("authToken", (String) null);
                 startActivity(i);
-                return false;
             }
         });
     }
@@ -221,20 +228,27 @@ public class LocatrFragment extends SupportMapFragment {
                     .position(new LatLng(m.getLat(), m.getLng()))
                     .title(m.getName() + " - " + m.getAddress())
                     .snippet(Integer.toString(m.getId()));
-            mMap.addMarker(current);
+            mMap.addMarker(current).showInfoWindow();
         }
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker arg0 ) {
-                Stand chosen = getStand(arg0);
+                return false;
+            }
+        });
+
+        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+                Log.i(TAG, marker.getSnippet() + " ");
+                Stand chosen = getStand(marker);
                 Intent i = new Intent(getContext(), StandActivity.class);
                 Log.i(TAG, Integer.toString(chosen.getId()));
                 i.putExtra("standID", chosen.getId());
                 i.putExtra("update", false);
                 i.putExtra("authToken", (String) null);
                 startActivity(i);
-                return false;
             }
         });
 
