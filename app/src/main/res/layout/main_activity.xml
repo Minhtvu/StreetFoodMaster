@@ -23,12 +23,6 @@
             android:layout_height="wrap_content"
             android:text="@string/advance_button"
             android:drawablePadding="4dp"/>
-        <Button
-            android:id="@+id/surprise_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/surprise_button"
-            android:drawablePadding="4dp"/>
 
 
     </LinearLayout>
