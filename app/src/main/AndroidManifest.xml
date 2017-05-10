@@ -117,8 +117,6 @@
             android:name=".StandActivity"
             android:label="Add a new Stand"
             android:parentActivityName=".ManageActivity"/>
-        <activity android:name=".StandInfoActivity"
-            android:parentActivityName=".ManageActivity"/>
     </application>
 
 </manifest>

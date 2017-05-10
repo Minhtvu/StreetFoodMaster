@@ -1,10 +1,7 @@
 package com.gnirt69.StreetFoodMaster;
 
-import android.*;
-import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -16,16 +13,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,16 +27,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class StandActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-//    private static final String[] LOCATION_PERMISSIONS = new String[]{
-//            Manifest.permission.ACCESS_FINE_LOCATION,
-//            Manifest.permission.ACCESS_COARSE_LOCATION,
-//    };
-
     private Location mLocation;
     private GoogleApiClient mClient;
     private static final String TAG = "AddStand";
-
-
     private static final String[] LOCATION_PERMISSIONS = new String[]{
             android.Manifest.permission.ACCESS_FINE_LOCATION,
             android.Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -76,7 +63,7 @@ public class StandActivity extends AppCompatActivity implements AdapterView.OnIt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_stand_activity);
+        setContentView(R.layout.stand_activity);
 
         setTitle("Create a New Stand");
 
@@ -141,6 +128,7 @@ public class StandActivity extends AppCompatActivity implements AdapterView.OnIt
                 mCity = mStandCity.getText().toString();
                 mState = mStandState.getText().toString();
                 mZipcode = Integer.parseInt(mStandZipcode.getText().toString());
+                Log.i(TAG,mName);
                 new UpdateHandler().execute();
             }
         });
@@ -351,13 +339,11 @@ public class StandActivity extends AppCompatActivity implements AdapterView.OnIt
                 mStandState.setText(mState);
                 mStandZipcode.setText(Integer.toString(mZipcode));
                 mStandFoodtype.setSelection(Arrays.asList(getResources().getStringArray(R.array.array_food)).indexOf(mFoodType));
-
+                Log.i(TAG,mName);
+                setTitle(mName);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
-
-
         }
     }
 }
