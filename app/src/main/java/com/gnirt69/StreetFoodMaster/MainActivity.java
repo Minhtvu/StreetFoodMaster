@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "Place";
     private static final int SIGNINREQUESTCODE = 100;
     private static final int SIGNUPREQUESTCODE = 101;
+    private static final int MANAGEREQUESTCODE = 102;
     private static final String KEY_AUTH = "authToken";
     private static final String KEY_USER = "userID";
 
@@ -131,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("authToken", authToken);
                 intent.putExtra("userID", userID);
                 Log.i(TAG,Integer.toString(userID)+" "+authToken);
-                startActivity(intent);
+                startActivityForResult(intent,MANAGEREQUESTCODE);
             }
         });
 
@@ -165,6 +166,14 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
             case (SIGNUPREQUESTCODE): {
+                if (resultCode == Activity.RESULT_OK) {
+                    authToken = data.getStringExtra("authToken");
+                    userID = data.getIntExtra("userID", -1);
+                    checkLoggedIn();
+                }
+                break;
+            }
+            case (MANAGEREQUESTCODE): {
                 if (resultCode == Activity.RESULT_OK) {
                     authToken = data.getStringExtra("authToken");
                     userID = data.getIntExtra("userID", -1);

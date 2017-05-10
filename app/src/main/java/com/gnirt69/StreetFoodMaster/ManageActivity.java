@@ -1,5 +1,6 @@
 package com.gnirt69.StreetFoodMaster;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -73,6 +74,12 @@ public class ManageActivity extends AppCompatActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra("authToken", mAuthToken);
+        resultIntent.putExtra("userID", mUserID);
+        //Log.i(TAG, Integer.toString(mUserID) + " " + mAuthToken);
+        setResult(Activity.RESULT_OK, resultIntent);
 
         new LookupHandler().execute();
     }
