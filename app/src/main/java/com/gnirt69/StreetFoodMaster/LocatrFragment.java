@@ -3,6 +3,7 @@ package com.gnirt69.StreetFoodMaster;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.PointF;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -130,7 +131,7 @@ public class LocatrFragment extends SupportMapFragment {
         });
 
 
-        searchInDatabase();
+        searchInDatabase(food);
         updateUI();
     }
 
@@ -138,7 +139,7 @@ public class LocatrFragment extends SupportMapFragment {
      * handle database searching needs
      *
      */
-    private void searchInDatabase(){
+    private void searchInDatabase(String food){
         //TODO: Implement a query to search in the database to get the data back to stands
         //Search by food name
 
@@ -394,8 +395,18 @@ public class LocatrFragment extends SupportMapFragment {
                             stand.getString("state"),
                             Integer.parseInt(stand.getString("zipcode")),
                             stand.getString("foodtype"));
-                    mStandsNames.add(stand.getString("name"));
-                    stands.add(s);
+                    if (food != null) {
+                        if (s.getFoodtype().equalsIgnoreCase(food)) {
+                            mStandsNames.add(stand.getString("name"));
+                            stands.add(s);
+                        } else {
+
+                        }
+                    } else {
+                        mStandsNames.add(stand.getString("name"));
+                        stands.add(s);
+                    }
+
 
                 }
 
